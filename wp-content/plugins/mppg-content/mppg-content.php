@@ -12,4 +12,25 @@
  * @package         Mppg_Content
  */
 
-// Your code starts here.
+namespace JMB\MidPenPuppyGuides;
+
+/**
+ * Base plugin file includes.
+ *
+ * @since 0.1.0
+ */
+function plugin_includes() {
+	// Custom post types
+	require_once 'post-types/puppy.php';
+	require_once 'post-types/member.php';
+
+	// Custom taxonomies
+	require_once 'taxonomies/status.php';
+
+	// Custom fields
+
+	// Custom functionality
+
+}
+
+add_action( 'plugins_loaded', __NAMESPACE__ . '\plugin_includes' );
