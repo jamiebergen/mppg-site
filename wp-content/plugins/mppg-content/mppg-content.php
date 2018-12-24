@@ -28,6 +28,8 @@ function plugin_includes() {
 	require_once 'taxonomies/status.php';
 
 	// Custom fields
+	require_once 'custom-fields/puppy.php';
+	require_once 'custom-fields/member.php';
 
 	// Custom functionality
 
