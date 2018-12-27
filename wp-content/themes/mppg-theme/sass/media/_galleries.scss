@@ -1,0 +1,27 @@
+.gallery {
+	margin-bottom: 1.5em;
+}
+
+.gallery-item {
+	display: inline-block;
+	text-align: center;
+	vertical-align: top;
+	width: 100%;
+	border: 1px solid $color__lightest;
+	padding: 10px;
+}
+
+// Loops through gallery-column-# class to assign the correct max width
+// See $columns defined in variables-site/_columns.scss
+@for $i from 1 through 9 {
+	.gallery-columns-#{$i} {
+		display: grid;
+		grid-template-columns: repeat( auto-fit, minmax( auto, map-get( $columns, $i ) ) );
+		justify-content: center;
+		grid-gap: 1em;
+	}
+}
+
+.gallery-caption {
+	display: block;
+}

@@ -1,0 +1,17 @@
+form.search-form {
+    position: relative;
+
+    input[type="search"] {
+        width: 100%;
+	    margin: 0;
+    }
+
+    button.search-submit {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        border: none;
+	    padding: 0 0.8em;
+    }
+}

@@ -1,0 +1,146 @@
+/*--------------------------------------------------------------
+# Positioning of main page sections
+--------------------------------------------------------------*/
+// Prevent horizontal scroll with full-width images
+#page {
+	overflow: hidden;
+}
+
+#content {
+
+	@include default-grid-container;
+
+	@media (min-width: 1023px) {
+
+		display: flex;
+
+		#primary {
+			width: 70%;
+		}
+		#secondary {
+			width: 30%;
+			padding-left: 4em;
+		}
+	}
+
+}
+
+.page #content { /* Narrow main content and no sidebar on pages */
+
+	#primary {
+		margin: 0 auto;
+	}
+}
+
+.default-grid-container {
+    @include default-grid-container;
+}
+
+/*--------------------------------------------------------------
+# Header Layout using Flexbox
+--------------------------------------------------------------*/
+
+#masthead {
+
+	margin-bottom: 2em;
+
+    .site-branding {
+        flex: 1;
+        padding-right: 4%;
+    }
+
+    .main-navigation {
+        align-self: center;
+    }
+
+    .inner-container {
+        display: flex;
+        justify-content: space-between;
+
+        @media screen and (max-width: 1150px) {
+            flex-direction: column;
+        }
+
+    }
+
+	@media screen and (max-width: 1023px) {
+		.site-branding {
+			order: 2;
+		}
+		.site-navigation {
+			order: 1;
+		}
+		.default-grid-container {
+			padding: 0;
+		}
+		.site-branding {
+			padding-right: 0;
+			margin: 2em 5%;
+		}
+	}
+
+}
+
+/*--------------------------------------------------------------
+# Header Styling: Site Branding
+--------------------------------------------------------------*/
+
+.site-branding {
+    margin: 2em 0;
+    border-left: 4px solid $color__lightest;
+    padding-left: 0.8em;
+}
+
+.site-title {
+    margin: 0;
+
+    a {
+        text-decoration: none;
+        color: $color__darkest;
+        font-family: $font__headings;
+        line-height: $font__line-height-heading;
+        @include font-size(1.3);
+    }
+}
+
+.site-description {
+    color: $color__lighter-copy;
+    margin: 0;
+}
+
+
+/*--------------------------------------------------------------
+# Footer Styling
+--------------------------------------------------------------*/
+
+#colophon {
+	margin-top: 1em;
+	color: $color__lighter-copy;
+
+    a {
+	    color: $color__lighter-copy;
+	    box-shadow: inset 0 -2px 0 $color__lighter-copy;
+	    text-decoration: none;
+	    padding-bottom: 2px;
+
+	    &:hover,
+	    &:focus,
+	    &:active {
+		    color: $color__darkest;
+		    background-color: $color__light-background;
+	    }
+    }
+
+    .site-info {
+        text-align: center;
+        margin-top: 2em;
+        padding-bottom: 2em;
+	    border-top: 4px solid $color__lightest;
+	    padding-top: 2em;
+
+        .sep {
+            padding: 0 5px 0 10px;
+        }
+    }
+}
+

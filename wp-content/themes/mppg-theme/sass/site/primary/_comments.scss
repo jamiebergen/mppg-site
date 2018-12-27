@@ -1,0 +1,112 @@
+.comment-content a {
+	word-wrap: break-word;
+}
+.bypostauthor {
+	display: block;
+}
+
+.comments-area {
+
+	ol.comment-list {
+		margin: 0;
+		padding: 2em 0;
+
+		li.comment {
+			list-style-type: none;
+			margin-bottom: 2.5em;
+			padding-bottom: 2em;
+			border-bottom: 1px solid $color__lightest;
+
+			&:not(.depth-1) {
+				margin: 0;
+				padding: 0;
+				border-bottom: none;
+			}
+
+			&:last-of-type {
+				border: none;
+			}
+
+			a.url,
+			.comment-metadata a {
+				margin: 0;
+				padding: 0;
+				box-shadow: none;
+			}
+		}
+
+		.avatar {
+			border-radius: 50%;
+			border: 1px solid $color__lightest;
+			padding: 0.3em;
+			display: block;
+		}
+
+		.reply {
+			margin-bottom: 1em;
+		}
+
+		.comment-metadata {
+			@include font-size(1);
+
+			a {
+				color: $color__lighter-copy;
+
+				&:hover,
+				&:focus {
+					color: $color__darkest;
+				}
+			}
+		}
+	}
+}
+
+.comment-respond {
+
+	.logged-in-as {
+		a {
+			color: $color__darkest;
+			margin-left: -2px;
+			margin-right: -2px;
+			padding-left: 2px;
+			padding-right: 2px;
+			box-shadow: inset 0 -2px 0 #7c8f90;
+			text-decoration: none;
+			padding-bottom: 2px;
+
+			&:hover,
+			&:focus,
+			&:active {
+				color: #fff;
+				background-color: $color__darkest;
+			}
+		}
+	}
+
+	.comment-reply-title {
+		margin-top: 0;
+	}
+
+	background-color: $color__light-background;
+	padding: 2em 3em 1em 3em;
+
+	.comment-form-author,
+	.comment-form-email,
+	.comment-form-url {
+		label {
+			padding-right: 0.5em;
+		}
+	}
+
+	@media screen and (max-width: 767px) {
+		padding: 1em;
+	}
+
+	@media screen and (max-width: 500px) {
+		input[type="text"],
+		input[type="email"],
+		input[type="url"] {
+			width: 100%;
+		}
+	}
+}

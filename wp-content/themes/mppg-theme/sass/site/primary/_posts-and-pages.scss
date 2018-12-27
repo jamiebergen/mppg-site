@@ -1,0 +1,178 @@
+.sticky {
+	display: block;
+	border: 3px solid $color__light-background;
+	padding: 1.3em 2em;
+}
+
+.hentry {
+	margin: 0 0 3.5em;
+}
+
+.updated:not(.published) {
+	display: none;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+	margin: 1em 0 0;
+}
+
+.post-thumbnail img {
+	margin: 2em 0 0;
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+
+	> a {
+		margin: 0 0.1em !important;
+	}
+}
+
+article {
+
+    .entry-title {
+        @include font-size(2.441); /* Match h1 from _headings.scss */
+	    margin: 0;
+	    margin-bottom: 0.3em;
+
+        a {
+            text-decoration: none;
+            color: $color__header;
+        }
+    }
+
+    .entry-meta,
+    .entry-footer {
+        color: $color__lighter-copy;
+
+        a {
+            color: $color__lighter-copy;
+	        text-decoration: none;
+
+	        &:hover,
+	        &:focus {
+		        color: $color__darkest;
+	        }
+        }
+
+	    .posted-on {
+		    &:before {
+			    font-family: 'dashicons';
+			    content: '\f508';
+			    padding-right: 5px;
+			    font-size: 1.2em;
+			    vertical-align: middle;
+			    padding-bottom: 5px;
+		    }
+	    }
+
+	    .byline {
+		    .author {
+			    &:before {
+				    font-family: 'dashicons';
+				    content: '\f110';
+				    padding-right: 5px;
+				    font-size: 1.2em;
+					vertical-align: middle;
+				    padding-bottom: 4px;
+			    }
+	        }
+		    .sep {
+			    padding: 0 10px;
+		    }
+	    }
+
+	    .cat-links {
+		    padding-right: 12px;
+
+		    &:before {
+			    font-family: 'dashicons';
+			    content: '\f318';
+			    padding-right: 5px;
+			    font-size: 1.2em;
+			    vertical-align: middle;
+			    padding-bottom: 4px;
+		    }
+	    }
+	    .tags-links {
+		    padding-right: 12px;
+
+		    &:before {
+			    font-family: 'dashicons';
+			    content: '\f323';
+			    padding-right: 5px;
+			    font-size: 1.2em;
+			    vertical-align: middle;
+			    padding-bottom: 4px;
+		    }
+	    }
+
+	    .comments-link {
+		    &:before {
+			    font-family: 'dashicons';
+			    content: '\f101';
+			    padding-right: 5px;
+			    font-size: 1.2em;
+			    vertical-align: middle;
+			    padding-bottom: 4px;
+		    }
+	    }
+
+	    .edit-link {
+		    display: block;
+		    margin-top: 1em;
+	    }
+    }
+
+}
+
+.content-area {
+	.entry-content,
+	.comment-list,
+	.entry-summary {
+		@include font-size(1.1);
+
+		a {
+			color: $color__darkest;
+			margin-left: -2px;
+			margin-right: -2px;
+			padding-left: 2px;
+			padding-right: 2px;
+			box-shadow: inset 0 -2px 0 #7c8f90;
+			text-decoration: none;
+			padding-bottom: 2px;
+
+			&:hover,
+			&:focus,
+			&:active {
+				color: $color__darkest;
+				background-color: $color__light-background;
+			}
+		}
+		a[href$=jpg],
+		a[href$=jpeg],
+		a[href$=jpe],
+		a[href$=png],
+		a[href$=gif],
+		.gallery a {
+			margin: 0;
+			padding: 0;
+			box-shadow: none;
+
+			&:hover,
+			&:focus,
+			&:active {
+				background: none;
+			}
+		}
+
+		::selection {
+			color: #fff;
+			background: $color__darkest;
+		}
+
+	}
+}

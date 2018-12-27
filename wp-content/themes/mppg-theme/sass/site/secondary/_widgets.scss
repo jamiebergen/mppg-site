@@ -1,0 +1,52 @@
+.widget {
+	margin: 0 0 1.5em;
+
+	h2.widget-title {
+		margin: 1em 0 0.3em 0;
+	}
+
+	/* Make sure select elements fit in widgets. */
+	select {
+		max-width: 100%;
+	}
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            padding: 0.8em 0;
+            border-bottom: 1px solid $color__lightest;
+            color: $color__lighter-copy;
+
+            &:last-of-type {
+                border-bottom: none;
+            }
+        }
+
+        a {
+            text-decoration: none;
+            color: $color__lighter-copy;
+            
+            &:hover,
+            &:focus {
+                color: $color__darkest;
+            }
+        }
+    }
+
+	.tagcloud {
+		a {
+			color: $color__darkest;
+			text-decoration: none;
+
+			&:hover,
+			&:focus,
+			&:active {
+				color: $color__darkest;
+				background-color: $color__light-background;
+			}
+		}
+	}
+}
