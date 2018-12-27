@@ -16,16 +16,16 @@
 	<footer id="colophon" class="site-footer">
 		
 		<div class="site-info default-grid-container">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'jmb-sample-theme' ) ); ?>">
+			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'mppg-theme' ) ); ?>">
 				<?php
 				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'jmb-sample-theme' ), 'WordPress' );
+				printf( esc_html__( 'Proudly powered by %s', 'mppg-theme' ), 'WordPress' );
 				?>
 			</a>
 			<span class="sep">|</span>
 				<?php
 				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'jmb-sample-theme' ), 'Sample Theme', '<a href="https://jamiebergen.com/">Jamie Bergen</a>' );
+				printf( esc_html__( 'Theme: %1$s by %2$s.', 'mppg-theme' ), 'Sample Theme', '<a href="https://jamiebergen.com/">Jamie Bergen</a>' );
 				?>
 		</div><!-- .site-info -->
 	

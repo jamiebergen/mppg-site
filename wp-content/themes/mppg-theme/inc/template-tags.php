@@ -27,7 +27,7 @@ if ( ! function_exists( 'jmb_sample_theme_posted_on' ) ) :
 		$posted_on = sprintf(
 			wp_kses(
 			/* translators: %s: post date. */
-				__( '<span class="screen-reader-text">Posted on </span>%s', 'jmb-sample-theme' ),
+				__( '<span class="screen-reader-text">Posted on </span>%s', 'mppg-theme' ),
 				array(
 					'span' => array(
 						'class' => array(),
@@ -50,7 +50,7 @@ if ( ! function_exists( 'jmb_sample_theme_posted_by' ) ) :
 		$byline = sprintf(
 			wp_kses(
 			/* translators: %s: post author. */
-				__( '<span class="screen-reader-text">by </span>%s', 'jmb-sample-theme' ),
+				__( '<span class="screen-reader-text">by </span>%s', 'mppg-theme' ),
 				array(
 					'span' => array(
 						'class' => array(),
@@ -73,13 +73,13 @@ if ( ! function_exists( 'jmb_sample_theme_entry_footer' ) ) :
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
 			/* translators: used between list items, there is a space after the comma */
-			$categories_list = get_the_category_list( esc_html__( ', ', 'jmb-sample-theme' ) );
+			$categories_list = get_the_category_list( esc_html__( ', ', 'mppg-theme' ) );
 			if ( $categories_list ) {
 				echo '<span class="cat-links">';
                 printf(
 					wp_kses(
 					/* translators: 1: list of categories. */
-						__( '<span class="screen-reader-text">Posted in </span>%1$s', 'jmb-sample-theme' ),
+						__( '<span class="screen-reader-text">Posted in </span>%1$s', 'mppg-theme' ),
 						array(
 							'span' => array(
 								'class' => array(),
@@ -91,13 +91,13 @@ if ( ! function_exists( 'jmb_sample_theme_entry_footer' ) ) :
 			}
 
 			/* translators: used between list items, there is a space after the comma */
-			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'jmb-sample-theme' ) );
+			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'mppg-theme' ) );
 			if ( $tags_list ) {
 				echo '<span class="tags-links">';
 				printf(
 					wp_kses(
 					/* translators: 1: list of tags. */
-						__( '<span class="screen-reader-text">Tagged </span>%1$s', 'jmb-sample-theme' ),
+						__( '<span class="screen-reader-text">Tagged </span>%1$s', 'mppg-theme' ),
 						array(
 							'span' => array(
 								'class' => array(),
@@ -116,7 +116,7 @@ if ( ! function_exists( 'jmb_sample_theme_entry_footer' ) ) :
 				sprintf(
 					wp_kses(
 					/* translators: %s: post title */
-						__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'jmb-sample-theme' ),
+						__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'mppg-theme' ),
 						array(
 							'span' => array(
 								'class' => array(),
@@ -133,7 +133,7 @@ if ( ! function_exists( 'jmb_sample_theme_entry_footer' ) ) :
 			sprintf(
 				wp_kses(
 				/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Edit <span class="screen-reader-text">%s</span>', 'jmb-sample-theme' ),
+					__( 'Edit <span class="screen-reader-text">%s</span>', 'mppg-theme' ),
 					array(
 						'span' => array(
 							'class' => array(),
@@ -198,7 +198,7 @@ if ( ! function_exists( 'jmb_sample_theme_get_read_more_link' ) ) :
 		$excerpt_more .= sprintf(
 			wp_kses(
 			/* translators: %s: Name of current post. Only visible to screen readers */
-				__( '<span class="screen-reader-text">Continue reading: "%s"</span>', 'jmb-sample-theme' ),
+				__( '<span class="screen-reader-text">Continue reading: "%s"</span>', 'mppg-theme' ),
 				array(
 					'span' => array(
 						'class' => array(),
