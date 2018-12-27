@@ -33,6 +33,7 @@ function plugin_includes() {
 
 	// Custom functionality
 	require_once 'includes/front-end.php';
+	require_once 'includes/helpers.php';
 }
 
 add_action( 'plugins_loaded', __NAMESPACE__ . '\plugin_includes' );
