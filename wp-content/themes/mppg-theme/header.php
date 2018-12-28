@@ -40,10 +40,10 @@
 					<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 					<?php
 				endif;
-				$jmb_sample_theme_description = get_bloginfo( 'description', 'display' );
-				if ( $jmb_sample_theme_description || is_customize_preview() ) :
+				$mppg_theme_description = get_bloginfo( 'description', 'display' );
+				if ( $mppg_theme_description || is_customize_preview() ) :
 					?>
-					<p class="site-description"><?php echo $jmb_sample_theme_description; /* WPCS: xss ok. */ ?></p>
+					<p class="site-description"><?php echo $mppg_theme_description; /* WPCS: xss ok. */ ?></p>
 				<?php endif; ?>
 			</div><!-- .site-branding -->
 

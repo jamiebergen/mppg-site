@@ -7,11 +7,11 @@
  * @package Sample_Theme
  */
 
-if ( ! function_exists( 'jmb_sample_theme_posted_on' ) ) :
+if ( ! function_exists( 'mppg_theme_posted_on' ) ) :
 	/**
 	 * Prints HTML with meta information for the current post-date/time.
 	 */
-	function jmb_sample_theme_posted_on() {
+	function mppg_theme_posted_on() {
 		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
@@ -42,11 +42,11 @@ if ( ! function_exists( 'jmb_sample_theme_posted_on' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'jmb_sample_theme_posted_by' ) ) :
+if ( ! function_exists( 'mppg_theme_posted_by' ) ) :
 	/**
 	 * Prints HTML with meta information for the current author.
 	 */
-	function jmb_sample_theme_posted_by() {
+	function mppg_theme_posted_by() {
 		$byline = sprintf(
 			wp_kses(
 			/* translators: %s: post author. */
@@ -65,11 +65,11 @@ if ( ! function_exists( 'jmb_sample_theme_posted_by' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'jmb_sample_theme_entry_footer' ) ) :
+if ( ! function_exists( 'mppg_theme_entry_footer' ) ) :
 	/**
 	 * Prints HTML with meta information for the categories, tags and comments.
 	 */
-	function jmb_sample_theme_entry_footer() {
+	function mppg_theme_entry_footer() {
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
 			/* translators: used between list items, there is a space after the comma */
@@ -148,14 +148,14 @@ if ( ! function_exists( 'jmb_sample_theme_entry_footer' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'jmb_sample_theme_post_thumbnail' ) ) :
+if ( ! function_exists( 'mppg_theme_post_thumbnail' ) ) :
 	/**
 	 * Displays an optional post thumbnail.
 	 *
 	 * Wraps the post thumbnail in an anchor element on index views, or a div
 	 * element when on single views.
 	 */
-	function jmb_sample_theme_post_thumbnail() {
+	function mppg_theme_post_thumbnail() {
 		if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
 			return;
 		}
@@ -184,7 +184,7 @@ if ( ! function_exists( 'jmb_sample_theme_post_thumbnail' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'jmb_sample_theme_get_read_more_link' ) ) :
+if ( ! function_exists( 'mppg_theme_get_read_more_link' ) ) :
 	/**
 	 * Helper function to generate read more link for excerpts
 	 *
@@ -192,7 +192,7 @@ if ( ! function_exists( 'jmb_sample_theme_get_read_more_link' ) ) :
 	 * 'Continue reading: ' is a translatable string
 	 */
 	//
-	function jmb_sample_theme_get_read_more_link( $permalink, $title ) {
+	function mppg_theme_get_read_more_link( $permalink, $title ) {
 		$excerpt_more = '';
 		$excerpt_more .= '&nbsp;<a class="excerpt-more" href="' . $permalink . '">[&hellip;]';
 		$excerpt_more .= sprintf(
