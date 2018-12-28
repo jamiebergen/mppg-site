@@ -138,3 +138,46 @@ function register_puppy_fields() {
 	) );
 }
 add_action( 'cmb2_init', __NAMESPACE__ . '\register_puppy_fields' );
+
+/**
+ * Override the loaded value for the Puppy Name meta field.
+ *
+ * @since  0.1.0
+ *
+ * @param  string $data         Value of the stored meta data.
+ * @param  int    $object_id    Member post ID.
+ * @param  array  $data_args    Various data args provided by CMB2.
+ * @param  object $field_object CMB2_Field object.
+ * @return string               Overridden meta value.
+ */
+function override_puppy_name_value( $data, $object_id, $data_args, $field_object ) {
+	if ( 'puppy' === get_post_type( $object_id ) ) {
+		$post = get_post( $object_id );
+		$data = $post->post_title;
+	}
+
+	return $data;
+}
+add_filter( 'cmb2_override_jmb_mppg_puppy_name_meta_value', __NAMESPACE__ . '\override_puppy_name_value', 10, 4 );
+
+
+/**
+ * Override the loaded value for the Puppy Bio meta field.
+ *
+ * @since  0.1.0
+ *
+ * @param  string $data         Value of the stored meta data.
+ * @param  int    $object_id    Member post ID.
+ * @param  array  $data_args    Various data args provided by CMB2.
+ * @param  object $field_object CMB2_Field object.
+ * @return string               Overridden meta value.
+ */
+function override_puppy_bio_value( $data, $object_id, $data_args, $field_object ) {
+	if ( 'puppy' === get_post_type( $object_id ) ) {
+		$post = get_post( $object_id );
+		$data = $post->post_content;
+	}
+
+	return $data;
+}
+add_filter( 'cmb2_override_jmb_mppg_puppy_bio_meta_value', __NAMESPACE__ . '\override_puppy_bio_value', 10, 4 );
