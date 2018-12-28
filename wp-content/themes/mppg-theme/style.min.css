@@ -169,6 +169,8 @@ article .entry-meta .tags-links,article .entry-footer .tags-links{padding-right:
 article .entry-meta .tags-links:before,article .entry-footer .tags-links:before{font-family:'dashicons';content:'\f323';padding-right:5px;font-size:1.2em;vertical-align:middle;padding-bottom:4px}
 article .entry-meta .comments-link:before,article .entry-footer .comments-link:before{font-family:'dashicons';content:'\f101';padding-right:5px;font-size:1.2em;vertical-align:middle;padding-bottom:4px}
 article .entry-meta .edit-link,article .entry-footer .edit-link{display:block;margin-top:1em}
+.page .entry-header{background-image:-webkit-gradient(linear,left top,left bottom,from(rgba(62,62,62,0.6)),to(rgba(62,62,62,0.6))),url("images/golden-retriever-eyes.jpg");background-image:linear-gradient(rgba(62,62,62,0.6),rgba(62,62,62,0.6)),url("images/golden-retriever-eyes.jpg");background-color:#404040;background-repeat:no-repeat;background-size:cover;background-position:center;min-height:300px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;margin-left:calc(-100vw / 2 + 780px / 2);margin-right:calc(-100vw / 2 + 780px / 2)}
+.page .entry-header h1{font-size:50px;color:#fff;padding:0 50px;text-align:center}
 .content-area .entry-content,.content-area .comment-list,.content-area .entry-summary{font-size:17.6px;font-size:1.1rem}
 .content-area .entry-content a,.content-area .comment-list a,.content-area .entry-summary a{color:#404040;margin-left:-2px;margin-right:-2px;padding-left:2px;padding-right:2px;-webkit-box-shadow:inset 0 -2px 0 #7c8f90;box-shadow:inset 0 -2px 0 #7c8f90;text-decoration:none;padding-bottom:2px}
 .content-area .entry-content a:hover,.content-area .entry-content a:focus,.content-area .entry-content a:active,.content-area .comment-list a:hover,.content-area .comment-list a:focus,.content-area .comment-list a:active,.content-area .entry-summary a:hover,.content-area .entry-summary a:focus,.content-area .entry-summary a:active{color:#404040;background-color:#f1f1ef}
@@ -196,19 +198,20 @@ article .entry-meta .edit-link,article .entry-footer .edit-link{display:block;ma
 #content{max-width:1260px;margin:0 auto;padding:0 5%}
 .page #content #primary{margin:0 auto}
 .default-grid-container{max-width:1260px;margin:0 auto;padding:0 5%}
-#masthead{margin-bottom:2em}
+.thirds{display:grid;grid-template-columns:1fr 1fr 1fr;grid-gap:30px}
 #masthead .site-branding{-webkit-box-flex:1;-ms-flex:1;flex:1;padding-right:4%}
 #masthead .main-navigation{-ms-flex-item-align:center;align-self:center}
 #masthead .inner-container{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
-.site-branding{margin:2em 0;border-left:4px solid #e6e6e6;padding-left:.8em}
-.site-title{margin:0}
-.site-title a{text-decoration:none;color:#404040;font-family:"Lora",serif;line-height:1.3;font-size:20.8px;font-size:1.3rem}
-.site-description{color:#696969;margin:0}
-#colophon{margin-top:1em;color:#696969}
+.site-branding{margin:1em 0}
+.site-branding .custom-logo-link{line-height:0}
+.site-branding .custom-logo-link img{width:130px}
+#colophon{margin-top:1em;color:#fff}
 #colophon a{color:#696969;-webkit-box-shadow:inset 0 -2px 0 #696969;box-shadow:inset 0 -2px 0 #696969;text-decoration:none;padding-bottom:2px}
 #colophon a:hover,#colophon a:focus,#colophon a:active{color:#404040;background-color:#f1f1ef}
-#colophon .site-info{text-align:center;margin-top:2em;padding-bottom:2em;border-top:4px solid #e6e6e6;padding-top:2em}
+#colophon .site-info{background-color:#404040;margin-top:2em;padding-bottom:2em;border-top:4px solid #e6e6e6;padding-top:2em}
 #colophon .site-info .sep{padding:0 5px 0 10px}
+#colophon .site-info .footer-credits{text-align:center}
+#colophon ul{margin:0;padding:0;list-style:none}
 .entry-content .alignfull,.entry-content .alignwide{margin-left:calc(-100vw / 2 + 100% / 2);margin-right:calc(-100vw / 2 + 100% / 2);max-width:100vw}
 .wp-block-cover-image{width:auto}
 .wp-block-columns{grid-gap:1em}

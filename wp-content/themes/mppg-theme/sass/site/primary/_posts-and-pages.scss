@@ -129,6 +129,29 @@ article {
 
 }
 
+.page {
+	.entry-header {
+		background-image: linear-gradient(rgba(62, 62, 62, 0.6), rgba(62, 62, 62, 0.6)), url('images/golden-retriever-eyes.jpg');
+		background-color: $color__darkest; /* Fallback so text will show if image doesn't load */
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+		min-height: 300px;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		margin-left: calc(-100vw / 2 + 780px / 2);
+		margin-right: calc(-100vw / 2 + 780px / 2);
+
+		h1 {
+			font-size: 50px;
+			color: #ffffff;
+			padding: 0 50px;
+			text-align: center;
+		}
+	}
+}
+
 .content-area {
 	.entry-content,
 	.comment-list,

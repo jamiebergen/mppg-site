@@ -14,21 +14,39 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer">
-		
-		<div class="site-info default-grid-container">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'mppg-theme' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'mppg-theme' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep">|</span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'mppg-theme' ), 'Sample Theme', '<a href="https://jamiebergen.com/">Jamie Bergen</a>' );
-				?>
-		</div><!-- .site-info -->
-	
+
+        <div class="site-info">
+            <div class="thirds default-grid-container">
+                <div class="third-box">
+                    <h3>Mid-Peninsula Puppy Guides</h3>
+                    <p>Follow us on Facebook</p>
+                    <p>Accessibilty statement</p>
+                </div>
+
+                <div class="third-box">
+                    <h3>Quick links for prospective members</h3>
+                    <ul>
+                        <li>FAQ</li>
+                        <li>How to get involved</li>
+                        <li>GDB volunteers page</li>
+                    </ul>
+                </div>
+
+                <div class="third-box">
+                    <h3>Quick links for current members</h3>
+                    <ul>
+                        <li>Calendar</li>
+                        <li>New puppy form</li>
+                        <li>New member form</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-credits full-row default-grid-container">
+                <p>&copy;<?php echo date('Y'); ?> Mid-Peninsula Puppy Guides. All rights reserved. Site by <a href="<?php echo esc_url( 'https://jamiebergen.com/' ); ?>">Jamie Bergen</a></p>
+            </div>
+
+        </div><!-- .site-info -->
+
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
