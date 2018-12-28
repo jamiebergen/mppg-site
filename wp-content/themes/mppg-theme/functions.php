@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package Sample_Theme
+ * @package Mppg_Theme
  */
 
 if ( ! function_exists( 'mppg_theme_setup' ) ) :

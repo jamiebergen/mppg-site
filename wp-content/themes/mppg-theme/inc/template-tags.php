@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package Sample_Theme
+ * @package Mppg_Theme
  */
 
 if ( ! function_exists( 'mppg_theme_posted_on' ) ) :

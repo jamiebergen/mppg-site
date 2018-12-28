@@ -93,6 +93,7 @@ textarea{width:100%}
 form.search-form{position:relative}
 form.search-form input[type="search"]{width:100%;margin:0}
 form.search-form button.search-submit{position:absolute;right:0;top:0;height:100%;border:0;padding:0 .8em}
+.cmb2-wrap ul{list-style:none;padding:0}
 a{color:#34d}
 a:visited{color:#34d}
 a:hover,a:focus,a:active{color:#404040;background-color:#f1f1ef}

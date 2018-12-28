@@ -2,7 +2,7 @@
 /**
  * Functions which enhance the theme by hooking into WordPress
  *
- * @package Sample_Theme
+ * @package Mppg_Theme
  */
 
 /**

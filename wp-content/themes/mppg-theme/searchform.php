@@ -7,7 +7,7 @@
  *
  * @link https://developer.wordpress.org/reference/functions/get_search_form/
  *
- * @package Sample_Theme
+ * @package Mppg_Theme
  */
 ?>
 

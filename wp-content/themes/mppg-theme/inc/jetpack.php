@@ -4,7 +4,7 @@
  *
  * @link https://jetpack.com/
  *
- * @package Sample_Theme
+ * @package Mppg_Theme
  */
 
 /**
