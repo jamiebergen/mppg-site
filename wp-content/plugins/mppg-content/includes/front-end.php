@@ -186,7 +186,7 @@ add_action( 'cmb2_after_init', __NAMESPACE__ . '\handle_frontend_new_post_form_s
  * Handles uploading a file to a WordPress post
  *
  * @param  int    $post_id               Post ID to upload the photo to
- * @param  array  $attachment_post_data  Attachement post-data array
+ * @param  array  $attachment_post_data  Attachment post-data array
  * @param  string $post_type             The post type associated with the upload
  */
 function frontend_form_photo_upload( $post_id, $attachment_post_data = array(), $post_type ) {
@@ -220,3 +220,18 @@ function frontend_form_photo_upload( $post_id, $attachment_post_data = array(), 
 	// Upload the file and send back the attachment post ID
 	return media_handle_upload( $photo_field_id, $post_id, $attachment_post_data );
 }
+
+/**
+ * Disables Gutenberg editor for puppy and member posts
+ * (Due to an incompatibility with Gutenberg and CMB2)
+ *
+ * @param  boolean  $current_status     Whether to use Gutenberg
+ * @param  string   $post_type          Post type
+ */
+function disable_gutenberg( $current_status, $post_type ) {
+
+	if ( $post_type === 'puppy' || $post_type === 'member' ) return false;
+	return $current_status;
+}
+add_filter( 'gutenberg_can_edit_post_type', __NAMESPACE__ . '\disable_gutenberg', 10, 2 );
+add_filter( 'use_block_editor_for_post_type', __NAMESPACE__ . '\disable_gutenberg', 10, 2 );
