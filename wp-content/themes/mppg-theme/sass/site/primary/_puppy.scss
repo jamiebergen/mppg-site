@@ -1,5 +1,8 @@
-.single-puppy {
-	.entry-header {
+.single-puppy,
+.post-type-archive-puppy,
+.tax-status {
+	.entry-header,
+	.page-header {
 		background-image: linear-gradient(rgba(62, 62, 62, 0.6), rgba(62, 62, 62, 0.6)), url('images/golden-retriever-eyes.jpg');
 		background-repeat: no-repeat;
 		background-size: cover;
@@ -15,15 +18,53 @@
 		}
 	}
 
+	#primary {
+		img {
+			border-radius: 100%;
+		}
+	}
+}
+
+.post-type-archive-puppy,
+.tax-status {
+	#primary {
+
+		main {
+			width: 100%;
+
+			margin: 50px auto 20px auto;
+			display: grid;
+			grid-template-columns: repeat( auto-fit, minmax( auto, 350px) );
+			grid-gap: 20px;
+			justify-content: center;
+
+			.puppy-archive-block {
+				text-align: center;
+				margin-bottom: 20px;
+				padding: 20px;
+				text-decoration: none;
+				color: $color__darkest !important;
+
+				img {
+					max-width: 100%;
+					height: auto;
+				}
+
+				h2, p {
+					margin: 0;
+				}
+			}
+		}
+	}
+}
+
+.single-puppy {
+
 	.puppy-main-bio {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		margin: 2em;
 		grid-gap: 30px;
-
-		img {
-			border-radius: 100%;
-		}
 
 		.puppy-stats p {
 			margin-bottom: 0;

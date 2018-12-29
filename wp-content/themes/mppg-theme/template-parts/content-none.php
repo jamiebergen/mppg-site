@@ -10,9 +10,9 @@
 ?>
 
 <section class="no-results not-found">
-	<header class="page-header">
-		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'mppg-theme' ); ?></h1>
-	</header><!-- .page-header -->
+	<header>
+		<h2 class="page-title"><?php esc_html_e( 'Nothing Found', 'mppg-theme' ); ?></h2>
+	</header>
 
 	<div class="page-content">
 		<?php

@@ -161,6 +161,16 @@ function mppg_theme_scripts() {
 add_action( 'wp_enqueue_scripts', 'mppg_theme_scripts' );
 
 /**
+ * Use puppy archive template for status taxonomy pages.
+ */
+function mppg_theme_template_redirect( $template ) {
+	if ( is_tax( 'status' ) )
+		$template = get_query_template( 'archive-puppy' );
+	return $template;
+}
+add_filter( 'template_include', 'mppg_theme_template_redirect' );
+
+/**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';

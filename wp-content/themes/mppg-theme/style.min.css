@@ -194,10 +194,14 @@ article .entry-meta .edit-link,article .entry-footer .edit-link{display:block;ma
 .comment-respond .logged-in-as a:hover,.comment-respond .logged-in-as a:focus,.comment-respond .logged-in-as a:active{color:#fff;background-color:#404040}
 .comment-respond .comment-reply-title{margin-top:0}
 .comment-respond .comment-form-author label,.comment-respond .comment-form-email label,.comment-respond .comment-form-url label{padding-right:.5em}
-.single-puppy .entry-header{background-image:-webkit-gradient(linear,left top,left bottom,from(rgba(62,62,62,0.6)),to(rgba(62,62,62,0.6))),url("images/golden-retriever-eyes.jpg");background-image:linear-gradient(rgba(62,62,62,0.6),rgba(62,62,62,0.6)),url("images/golden-retriever-eyes.jpg");background-repeat:no-repeat;background-size:cover;background-position:center;background-color:#404040;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
-.single-puppy .entry-header h1{color:#fff;text-align:center}
+.single-puppy .entry-header,.single-puppy .page-header,.post-type-archive-puppy .entry-header,.post-type-archive-puppy .page-header,.tax-status .entry-header,.tax-status .page-header{background-image:-webkit-gradient(linear,left top,left bottom,from(rgba(62,62,62,0.6)),to(rgba(62,62,62,0.6))),url("images/golden-retriever-eyes.jpg");background-image:linear-gradient(rgba(62,62,62,0.6),rgba(62,62,62,0.6)),url("images/golden-retriever-eyes.jpg");background-repeat:no-repeat;background-size:cover;background-position:center;background-color:#404040;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
+.single-puppy .entry-header h1,.single-puppy .page-header h1,.post-type-archive-puppy .entry-header h1,.post-type-archive-puppy .page-header h1,.tax-status .entry-header h1,.tax-status .page-header h1{color:#fff;text-align:center}
+.single-puppy #primary img,.post-type-archive-puppy #primary img,.tax-status #primary img{border-radius:100%}
+.post-type-archive-puppy #primary main,.tax-status #primary main{width:100%;margin:50px auto 20px auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(auto,350px));grid-gap:20px;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
+.post-type-archive-puppy #primary main .puppy-archive-block,.tax-status #primary main .puppy-archive-block{text-align:center;margin-bottom:20px;padding:20px;text-decoration:none;color:#404040 !important}
+.post-type-archive-puppy #primary main .puppy-archive-block img,.tax-status #primary main .puppy-archive-block img{max-width:100%;height:auto}
+.post-type-archive-puppy #primary main .puppy-archive-block h2,.post-type-archive-puppy #primary main .puppy-archive-block p,.tax-status #primary main .puppy-archive-block h2,.tax-status #primary main .puppy-archive-block p{margin:0}
 .single-puppy .puppy-main-bio{display:grid;grid-template-columns:1fr 1fr;margin:2em;grid-gap:30px}
-.single-puppy .puppy-main-bio img{border-radius:100%}
 .single-puppy .puppy-main-bio .puppy-stats p{margin-bottom:0}
 #page{overflow:hidden}
 #primary,aside{max-width:1260px;margin:0 auto;padding:0 5%}
