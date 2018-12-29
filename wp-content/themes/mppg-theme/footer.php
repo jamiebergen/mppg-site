@@ -19,26 +19,30 @@
             <div class="thirds default-grid-container">
                 <div class="third-box">
                     <h3>Mid-Peninsula Puppy Guides</h3>
-                    <p>Follow us on Facebook</p>
-                    <p>Accessibilty statement</p>
+                    <ul>
+                        <li><a href="https://www.facebook.com/midpenpuppyguides/">Follow us on Facebook</a></li>
+                        <li><a href="#">Accessibilty statement</a></li>
+                    </ul>
                 </div>
 
                 <div class="third-box">
                     <h3>Quick links for prospective members</h3>
-                    <ul>
-                        <li>FAQ</li>
-                        <li>How to get involved</li>
-                        <li>GDB volunteers page</li>
-                    </ul>
+	                <?php
+	                wp_nav_menu( array(
+		                'theme_location'  => 'menu-2',
+		                'menu_id'         => 'footer-middle-menu',
+	                ) );
+	                ?>
                 </div>
 
                 <div class="third-box">
                     <h3>Quick links for current members</h3>
-                    <ul>
-                        <li>Calendar</li>
-                        <li>New puppy form</li>
-                        <li>New member form</li>
-                    </ul>
+	                <?php
+	                wp_nav_menu( array(
+		                'theme_location'  => 'menu-3',
+		                'menu_id'         => 'footer-right-menu',
+	                ) );
+	                ?>
                 </div>
             </div>
             <div class="footer-credits full-row default-grid-container">

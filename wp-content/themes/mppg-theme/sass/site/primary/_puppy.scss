@@ -1,5 +1,9 @@
 .single-puppy {
 	.entry-header {
+		background-image: linear-gradient(rgba(62, 62, 62, 0.6), rgba(62, 62, 62, 0.6)), url('images/golden-retriever-eyes.jpg');
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
 		background-color: $color__darkest; /* Fallback so text will show if image doesn't load */
 		display: flex;
 		flex-direction: column;
