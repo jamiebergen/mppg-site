@@ -7,16 +7,9 @@
  * @package Mppg_Theme
  */
 
-$bg_img_url = get_the_post_thumbnail_url( $post->ID, 'full' );
-
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <header class="entry-header" <?php echo ( $bg_img_url ? 'style="background-image: linear-gradient(rgba(62, 62, 62, 0.6), rgba(62, 62, 62, 0.6)), url(' . $bg_img_url . ')";' : '' ); ?> >
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-    </header><!-- .entry-header -->
-
-	<?php //mppg_theme_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php

@@ -1,0 +1,28 @@
+.single-puppy {
+	.entry-header {
+		background-color: $color__darkest; /* Fallback so text will show if image doesn't load */
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+
+		h1 {
+			color: #ffffff;
+			text-align: center;
+		}
+	}
+
+	.puppy-main-bio {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		margin: 2em;
+		grid-gap: 30px;
+
+		img {
+			border-radius: 100%;
+		}
+
+		.puppy-stats p {
+			margin-bottom: 0;
+		}
+	}
+}

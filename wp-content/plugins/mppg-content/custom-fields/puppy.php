@@ -93,12 +93,7 @@ function register_puppy_fields() {
 		'type'             => 'radio',
 		'id'               => $prefix . 'breed',
 		'name'             => __( 'Breed/color', 'mppg-content' ),
-		'options'          => array(
-			'black-lab'     => __( 'Black Labrador Retriever', 'mppg-content' ),
-			'yellow-lab'    => __( 'Yellow Labrador Retriever', 'mppg-content' ),
-			'golden-pure'   => __( 'Golden Retriever', 'mppg-content' ),
-			'golden-mix'    => __( 'Golden Retriever/Lab Mix', 'mppg-content' ),
-		),
+		'options_cb'       => __NAMESPACE__ . '\breed_select_options',
 //		'attributes' => array(
 //			'required' => 'required',
 //		),
@@ -110,10 +105,7 @@ function register_puppy_fields() {
 		'type'             => 'radio',
 		'id'               => $prefix . 'gender',
 		'name'             => __( 'Gender', 'mppg-content' ),
-		'options'          => array(
-			'male'    => __( 'Male', 'mppg-content' ),
-			'female'  => __( 'Female', 'mppg-content' ),
-		),
+		'options_cb'       => __NAMESPACE__ . '\gender_select_options',
 //		'attributes' => array(
 //			'required' => 'required',
 //		),
@@ -138,6 +130,40 @@ function register_puppy_fields() {
 	) );
 }
 add_action( 'cmb2_init', __NAMESPACE__ . '\register_puppy_fields' );
+
+
+/**
+ * Options for Breed/color
+ *
+ * @since  0.1.0
+ *
+ * @return array
+ */
+function breed_select_options() {
+
+	return array(
+		'black-lab'     => __( 'Black Labrador Retriever', 'mppg-content' ),
+		'yellow-lab'    => __( 'Yellow Labrador Retriever', 'mppg-content' ),
+		'golden-pure'   => __( 'Golden Retriever', 'mppg-content' ),
+		'golden-mix'    => __( 'Golden Retriever/Lab Mix', 'mppg-content' ),
+	);
+}
+
+/**
+ * Options for Gender
+ *
+ * @since  0.1.0
+ *
+ * @return array
+ */
+function gender_select_options() {
+
+	return array(
+		'male'    => __( 'Male', 'mppg-content' ),
+		'female'  => __( 'Female', 'mppg-content' ),
+	);
+}
+
 
 /**
  * Override the loaded value for the Puppy Name meta field.

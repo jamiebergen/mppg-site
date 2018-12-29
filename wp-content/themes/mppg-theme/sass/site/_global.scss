@@ -6,7 +6,8 @@
 	overflow: hidden;
 }
 
-#content {
+#primary,
+aside {
 
 	@include default-grid-container;
 
@@ -14,20 +15,10 @@
 
 		display: flex;
 
-		#primary {
+		main {
 			width: 70%;
+			margin: 0 auto;
 		}
-		#secondary {
-			width: 30%;
-			padding-left: 4em;
-		}
-	}
-}
-
-.page #content { /* Narrow main content and no sidebar on pages */
-
-	#primary {
-		margin: 0 auto;
 	}
 }
 
@@ -36,7 +27,7 @@
 }
 
 /*--------------------------------------------------------------
-# Page Layout
+# Page Layouts
 --------------------------------------------------------------*/
 
 .thirds {

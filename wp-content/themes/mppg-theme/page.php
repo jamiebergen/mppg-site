@@ -13,7 +13,15 @@
  */
 
 get_header();
+
+$bg_img_url = get_the_post_thumbnail_url( $post->ID, 'full' );
 ?>
+
+    <header class="entry-header" <?php echo ( $bg_img_url ? 'style="background-image: linear-gradient(rgba(62, 62, 62, 0.6), rgba(62, 62, 62, 0.6)), url(' . $bg_img_url . ')";' : '' ); ?> >
+        <div class="default-grid-container">
+            <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+        </div>
+    </header><!-- .entry-header -->
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">

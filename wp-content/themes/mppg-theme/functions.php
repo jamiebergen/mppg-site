@@ -87,6 +87,13 @@ if ( ! function_exists( 'mppg_theme_setup' ) ) :
 		 */
 		add_theme_support( 'align-wide' );
 
+		/**
+		 * Add custom image size
+		 *
+		 * @link https://wordpress.org/gutenberg/handbook/extensibility/theme-support/
+		 */
+		add_image_size( 'profile-pic', 300, 300, true ); // 220 pixels wide by 180 pixels tall, hard crop mode
+
 	}
 endif;
 add_action( 'after_setup_theme', 'mppg_theme_setup' );
