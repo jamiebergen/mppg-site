@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Creating_an_Error_404_Page
  *
- * @package Mppg_Theme
+ * @package Mid-Peninsula_Puppy_Guides
  */
 
 get_header();

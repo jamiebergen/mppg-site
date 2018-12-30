@@ -1,10 +1,10 @@
 <?php
 /**
- * Sample Theme functions and definitions
+ * Mid-Peninsula Puppy Guides Theme functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package Mppg_Theme
+ * @package Mid-Peninsula_Puppy_Guides
  */
 
 if ( ! function_exists( 'mppg_theme_setup' ) ) :
@@ -19,7 +19,7 @@ if ( ! function_exists( 'mppg_theme_setup' ) ) :
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on Sample Theme, use a find and replace
+		 * If you're building a theme based on Mid-Peninsula Puppy Guides Theme, use a find and replace
 		 * to change 'mppg-theme' to the name of your theme in all the template files.
 		 */
 		load_theme_textdomain( 'mppg-theme', get_template_directory() . '/languages' );

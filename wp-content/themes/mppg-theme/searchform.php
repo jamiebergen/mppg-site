@@ -7,7 +7,7 @@
  *
  * @link https://developer.wordpress.org/reference/functions/get_search_form/
  *
- * @package Mppg_Theme
+ * @package Mid-Peninsula_Puppy_Guides
  */
 ?>
 

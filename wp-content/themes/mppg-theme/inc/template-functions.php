@@ -2,7 +2,7 @@
 /**
  * Functions which enhance the theme by hooking into WordPress
  *
- * @package Mppg_Theme
+ * @package Mid-Peninsula_Puppy_Guides
  */
 
 /**

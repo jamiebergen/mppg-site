@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Mppg_Theme
+ * @package Mid-Peninsula_Puppy_Guides
  */
 
 ?>

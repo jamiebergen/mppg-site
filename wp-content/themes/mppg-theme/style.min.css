@@ -13,7 +13,7 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
-Sample Theme is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
+Mid-Peninsula Puppy Guides Theme is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 Normalizing styles have been helped along thanks to the fine work of
@@ -203,6 +203,19 @@ article .entry-meta .edit-link,article .entry-footer .edit-link{display:block;ma
 .post-type-archive-puppy #primary main .puppy-archive-block h2,.post-type-archive-puppy #primary main .puppy-archive-block p,.tax-status #primary main .puppy-archive-block h2,.tax-status #primary main .puppy-archive-block p{margin:0}
 .single-puppy .puppy-main-bio{display:grid;grid-template-columns:1fr 1fr;margin:2em;grid-gap:30px}
 .single-puppy .puppy-main-bio .puppy-stats p{margin-bottom:0}
+.home-top{background-color:#404040;background-repeat:no-repeat;background-size:cover;min-height:600px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
+.home-top .full-row{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;width:100%}
+.home-top .site-title{color:#34d;position:relative;font-size:14px;margin:0;text-transform:uppercase;letter-spacing:.5px}
+.home-top .site-description{font-family:"Lora",serif;font-size:43px;line-height:1.3;margin:.3em 0 .5em 0}
+.home-top #home-top-text{background-color:rgba(255,255,255,0.8);max-width:420px;padding:30px;margin:30px 0}
+.button-row{text-align:center}
+p.minor-text{color:#696969}
+.fa-paw{font-size:3.5rem;color:#d0dfd8}
+.row-container{margin-top:80px;margin-bottom:80px}
+.banner-row{font-size:19.2px;font-size:1.2rem;padding:20px 30px;display:grid;grid-template-columns:repeat(auto-fit,minmax(auto,320px));grid-gap:50px;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
+.puppy-text h2{margin-top:0}
+.puppy-img{text-align:center}
+.puppy-img img{border-radius:50%}
 #page{overflow:hidden}
 #primary,aside{max-width:1260px;margin:0 auto;padding:0 5%}
 .default-grid-container{max-width:1260px;margin:0 auto;padding:0 5%}

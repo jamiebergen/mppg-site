@@ -39,4 +39,11 @@
 			}
 		} );
 	} );
+
+    // Home Top Background Image - Image Control
+    wp.customize( 'mppg_theme_home_top_background_image', function( value ) {
+        value.bind( function( to ) {
+            $( '.home-top' ).css( 'background-image', 'linear-gradient(rgba(62, 62, 62, 0.6), rgba(62, 62, 62, 0.6)), url( ' + to + ')' );
+        } );
+    });
 } )( jQuery );

@@ -1,4 +1,4 @@
-=== Sample Theme ===
+=== Mid-Peninsula Puppy Guides Theme ===
 
 Contributors: automattic
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
@@ -9,7 +9,7 @@ Stable tag: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
-A starter theme called Sample Theme.
+A starter theme called Mid-Peninsula Puppy Guides Theme.
 
 == Description ==
 
@@ -25,7 +25,7 @@ A sample theme
 
 = Does this theme support any plugins? =
 
-Sample Theme includes support for Infinite Scroll in Jetpack.
+Mid-Peninsula Puppy Guides Theme includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 

@@ -4,7 +4,7 @@
  *
  * @link https://jetpack.com/
  *
- * @package Mppg_Theme
+ * @package Mid-Peninsula_Puppy_Guides
  */
 
 /**
