@@ -50,6 +50,10 @@ p.minor-text {
 	color: $color__lighter-copy;
 	@include font-size(1);
 
+	.content-link {
+		color: $color__lighter-copy !important;
+	}
+
 	&.larger-text {
 		@include font-size(1.1);
 	}
@@ -90,10 +94,9 @@ p.minor-text {
 	}
 }
 
-.puppy-img {
-	text-align: center;
-
+.newest-puppy {
 	img {
 		border-radius: 50%;
+		margin: 0 auto;
 	}
 }

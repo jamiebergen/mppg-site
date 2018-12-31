@@ -194,4 +194,22 @@ article {
 		}
 
 	}
+
+	.content-link {
+		color: $color__darkest;
+		margin-left: -2px;
+		margin-right: -2px;
+		padding-left: 2px;
+		padding-right: 2px;
+		box-shadow: inset 0 -2px 0 #7c8f90;
+		text-decoration: none;
+		padding-bottom: 2px;
+
+		&:hover,
+		&:focus,
+		&:active {
+			color: $color__darkest;
+			background-color: $color__light-background;
+		}
+	}
 }

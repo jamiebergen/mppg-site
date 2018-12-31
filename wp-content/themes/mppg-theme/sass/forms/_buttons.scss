@@ -1,13 +1,14 @@
 button,
 input[type="button"],
 input[type="reset"],
-input[type="submit"] {
+input[type="submit"],
+.mppg-cta {
 	border: 1px solid;
 	border-color: $color__border-button;
 	background: $color__background-button;
 	color: #fff;
 	@include font-size(1);
-	line-height: 1;
+	line-height: 1.5;
 	padding: 1em 1.5em;
 
 	&:hover {
@@ -18,5 +19,18 @@ input[type="submit"] {
 	&:active,
 	&:focus {
 		background-color: $color__background-button-hover;
+	}
+}
+
+a.mppg-cta {
+	color: #fff !important;
+	text-decoration: none;
+	border: none;
+	@include font-size(1.1);
+	display: inline-block;
+	line-height: 1.5;
+
+	.svg-inline--fa {
+		margin-left: 3px;
 	}
 }

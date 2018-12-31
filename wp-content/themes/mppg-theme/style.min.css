@@ -82,9 +82,11 @@ img{height:auto;max-width:100%}
 figure{margin:1em 0;width:auto !important}
 table{margin:0 0 1.5em;width:100%}
 table td{border:1px solid #e6e6e6;padding:.5em}
-button,input[type="button"],input[type="reset"],input[type="submit"]{border:1px solid;border-color:#ccc #ccc #bbb;background:#404040;color:#fff;font-size:16px;font-size:1rem;line-height:1;padding:1em 1.5em}
-button:hover,input[type="button"]:hover,input[type="reset"]:hover,input[type="submit"]:hover{cursor:pointer}
-button:hover,button:active,button:focus,input[type="button"]:hover,input[type="button"]:active,input[type="button"]:focus,input[type="reset"]:hover,input[type="reset"]:active,input[type="reset"]:focus,input[type="submit"]:hover,input[type="submit"]:active,input[type="submit"]:focus{background-color:#696969}
+button,input[type="button"],input[type="reset"],input[type="submit"],.mppg-cta{border:1px solid;border-color:#ccc #ccc #bbb;background:#404040;color:#fff;font-size:16px;font-size:1rem;line-height:1.5;padding:1em 1.5em}
+button:hover,input[type="button"]:hover,input[type="reset"]:hover,input[type="submit"]:hover,.mppg-cta:hover{cursor:pointer}
+button:hover,button:active,button:focus,input[type="button"]:hover,input[type="button"]:active,input[type="button"]:focus,input[type="reset"]:hover,input[type="reset"]:active,input[type="reset"]:focus,input[type="submit"]:hover,input[type="submit"]:active,input[type="submit"]:focus,.mppg-cta:hover,.mppg-cta:active,.mppg-cta:focus{background-color:#696969}
+a.mppg-cta{color:#fff !important;text-decoration:none;border:0;font-size:17.6px;font-size:1.1rem;display:inline-block;line-height:1.5}
+a.mppg-cta .svg-inline--fa{margin-left:3px}
 input[type="text"],input[type="email"],input[type="url"],input[type="password"],input[type="search"],input[type="number"],input[type="tel"],input[type="range"],input[type="date"],input[type="month"],input[type="week"],input[type="time"],input[type="datetime"],input[type="datetime-local"],input[type="color"],textarea{color:#666;border:1px solid #ddd;-webkit-transition:all .30s ease-in-out;transition:all .30s ease-in-out;outline:0;padding:5px 12px;margin:5px 1px 3px 0}
 input[type="text"]:focus,input[type="email"]:focus,input[type="url"]:focus,input[type="password"]:focus,input[type="search"]:focus,input[type="number"]:focus,input[type="tel"]:focus,input[type="range"]:focus,input[type="date"]:focus,input[type="month"]:focus,input[type="week"]:focus,input[type="time"]:focus,input[type="datetime"]:focus,input[type="datetime-local"]:focus,input[type="color"]:focus,textarea:focus{color:#111;-webkit-box-shadow:0 0 5px #51cbee;box-shadow:0 0 5px #51cbee;border:1px solid #51cbee}
 input[type="checkbox"],input [type="radio"]{margin-right:.5em}
@@ -178,6 +180,8 @@ article .entry-meta .edit-link,article .entry-footer .edit-link{display:block;ma
 .content-area .entry-content a[href$=jpg],.content-area .entry-content a[href$=jpeg],.content-area .entry-content a[href$=jpe],.content-area .entry-content a[href$=png],.content-area .entry-content a[href$=gif],.content-area .entry-content .gallery a,.content-area .comment-list a[href$=jpg],.content-area .comment-list a[href$=jpeg],.content-area .comment-list a[href$=jpe],.content-area .comment-list a[href$=png],.content-area .comment-list a[href$=gif],.content-area .comment-list .gallery a,.content-area .entry-summary a[href$=jpg],.content-area .entry-summary a[href$=jpeg],.content-area .entry-summary a[href$=jpe],.content-area .entry-summary a[href$=png],.content-area .entry-summary a[href$=gif],.content-area .entry-summary .gallery a{margin:0;padding:0;-webkit-box-shadow:none;box-shadow:none}
 .content-area .entry-content a[href$=jpg]:hover,.content-area .entry-content a[href$=jpg]:focus,.content-area .entry-content a[href$=jpg]:active,.content-area .entry-content a[href$=jpeg]:hover,.content-area .entry-content a[href$=jpeg]:focus,.content-area .entry-content a[href$=jpeg]:active,.content-area .entry-content a[href$=jpe]:hover,.content-area .entry-content a[href$=jpe]:focus,.content-area .entry-content a[href$=jpe]:active,.content-area .entry-content a[href$=png]:hover,.content-area .entry-content a[href$=png]:focus,.content-area .entry-content a[href$=png]:active,.content-area .entry-content a[href$=gif]:hover,.content-area .entry-content a[href$=gif]:focus,.content-area .entry-content a[href$=gif]:active,.content-area .entry-content .gallery a:hover,.content-area .entry-content .gallery a:focus,.content-area .entry-content .gallery a:active,.content-area .comment-list a[href$=jpg]:hover,.content-area .comment-list a[href$=jpg]:focus,.content-area .comment-list a[href$=jpg]:active,.content-area .comment-list a[href$=jpeg]:hover,.content-area .comment-list a[href$=jpeg]:focus,.content-area .comment-list a[href$=jpeg]:active,.content-area .comment-list a[href$=jpe]:hover,.content-area .comment-list a[href$=jpe]:focus,.content-area .comment-list a[href$=jpe]:active,.content-area .comment-list a[href$=png]:hover,.content-area .comment-list a[href$=png]:focus,.content-area .comment-list a[href$=png]:active,.content-area .comment-list a[href$=gif]:hover,.content-area .comment-list a[href$=gif]:focus,.content-area .comment-list a[href$=gif]:active,.content-area .comment-list .gallery a:hover,.content-area .comment-list .gallery a:focus,.content-area .comment-list .gallery a:active,.content-area .entry-summary a[href$=jpg]:hover,.content-area .entry-summary a[href$=jpg]:focus,.content-area .entry-summary a[href$=jpg]:active,.content-area .entry-summary a[href$=jpeg]:hover,.content-area .entry-summary a[href$=jpeg]:focus,.content-area .entry-summary a[href$=jpeg]:active,.content-area .entry-summary a[href$=jpe]:hover,.content-area .entry-summary a[href$=jpe]:focus,.content-area .entry-summary a[href$=jpe]:active,.content-area .entry-summary a[href$=png]:hover,.content-area .entry-summary a[href$=png]:focus,.content-area .entry-summary a[href$=png]:active,.content-area .entry-summary a[href$=gif]:hover,.content-area .entry-summary a[href$=gif]:focus,.content-area .entry-summary a[href$=gif]:active,.content-area .entry-summary .gallery a:hover,.content-area .entry-summary .gallery a:focus,.content-area .entry-summary .gallery a:active{background:0}
 .content-area .entry-content ::selection,.content-area .comment-list ::selection,.content-area .entry-summary ::selection{color:#fff;background:#404040}
+.content-area .content-link{color:#404040;margin-left:-2px;margin-right:-2px;padding-left:2px;padding-right:2px;-webkit-box-shadow:inset 0 -2px 0 #7c8f90;box-shadow:inset 0 -2px 0 #7c8f90;text-decoration:none;padding-bottom:2px}
+.content-area .content-link:hover,.content-area .content-link:focus,.content-area .content-link:active{color:#404040;background-color:#f1f1ef}
 .comment-content a{word-wrap:break-word}
 .bypostauthor{display:block}
 .comments-area ol.comment-list{margin:0;padding:2em 0}
@@ -214,14 +218,14 @@ article .entry-meta .edit-link,article .entry-footer .edit-link{display:block;ma
 .home-top #home-top-text{background-color:rgba(255,255,255,0.8);max-width:420px;padding:30px;margin:30px 0}
 .button-row{text-align:center}
 p.minor-text{color:#696969;font-size:16px;font-size:1rem}
+p.minor-text .content-link{color:#696969 !important}
 p.minor-text.larger-text{font-size:17.6px;font-size:1.1rem}
 .fa-paw{font-size:3.5rem;color:#d0dfd8}
 .row-container{margin-top:50px !important;margin-bottom:50px !important}
 .row-container .thirds{grid-gap:30px;grid-template-columns:1fr 1fr 1fr}
 .banner-row{font-size:19.2px;font-size:1.2rem;padding:20px 30px;display:grid;grid-template-columns:repeat(auto-fit,minmax(auto,350px));grid-gap:50px;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
 .puppy-text h2{margin-top:0}
-.puppy-img{text-align:center}
-.puppy-img img{border-radius:50%}
+.newest-puppy img{border-radius:50%;margin:0 auto}
 #page{overflow:hidden}
 #primary,aside{max-width:1260px;margin:0 auto;padding:0 5%}
 .default-grid-container{max-width:1260px;margin:0 auto;padding:0 5%}

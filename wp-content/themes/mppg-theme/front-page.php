@@ -12,7 +12,7 @@ $description = get_bloginfo( 'description', 'display' );
 
 get_header(); ?>
 
-<!--    <div id="primary" class="content-area">-->
+<div class="content-area">
 <!--        <main id="main" class="site-main">-->
 
 <div class="home-top">
@@ -60,7 +60,7 @@ get_header(); ?>
 
 </div>
 
-<div class="banner-row default-grid-container">
+<div class="banner-row default-grid-container newest-puppy">
     <div class="puppy-text">
         <h2>Meet our newest member.</h2>
 
@@ -72,32 +72,41 @@ get_header(); ?>
 
 		    $puppy_data = retrieve_puppy_data( $recent["ID"] );
 
-	        echo '<p>';
-		        echo '<a href="' . get_permalink($recent["ID"]) . '">' .   $recent["post_title"].'</a>';
+	        echo '<p class="minor-text larger-text">';
+		        echo $recent["post_title"];
 		        echo ' is a ';
-		        echo $puppy_data['gender'];
+		        echo strtolower( $puppy_data['gender'] );
 		        echo ' ';
-		        echo $puppy_data['breed'];
+		        echo strtolower( $puppy_data['breed'] );
 		        if ($puppy_data['raiser']) {
 			        echo ' being raised by ';
 			        echo $puppy_data['raiser'];
                 }
                 echo '.';
             echo '</p>';
+
+            echo '<a class="mppg-cta" href="' . get_permalink($recent["ID"]) . '">' . 'Learn more about ' . $recent["post_title"] . '</a>';
+
 	    }
 	    wp_reset_query();
 	    ?>
-        <a class="mppg-cta" href="">See all the puppies in training</a>
+
     </div>
-    <figure class="puppy-img">
-        <img src="https://loremflickr.com/320/320/puppy" alt="" />
-        <figcaption>Image description: A dog.</figcaption>
-    </figure>
+
+    <?php
+    echo get_the_post_thumbnail( $recent["ID"], 'profile-pic' );
+    ?>
+<!--    <figure class="puppy-img">-->
+<!--        <img src="https://loremflickr.com/320/320/puppy" alt="" />-->
+<!--        <figcaption>Image description: A dog.</figcaption>-->
+<!--    </figure>-->
+
+
 
 </div>
 
 <!--        </main><!-- #main -->
-<!--    </div><!-- #primary -->
+</div>
 
 <?php
 get_footer();
