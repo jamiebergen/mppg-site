@@ -5,6 +5,11 @@
 			list-style: none;
 			padding: 0;
 		}
+
+		.cmb2-metabox-description {
+			@include font-size(1);
+			line-height: 1.5;
+		}
 	}
 
 	input[type="submit"] {

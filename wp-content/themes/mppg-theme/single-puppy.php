@@ -29,48 +29,49 @@ get_header();
 
 	                    <?php the_post_thumbnail( 'profile-pic' ); ?>
 
-                        <div class="puppy-stats">
+                        <ul class="puppy-stats">
 
 		                    <?php
 
                             $puppy_data = retrieve_puppy_data( get_the_ID() );
 
 		                    if ( $puppy_data['status'] ) {
-			                    echo '<p><strong>Status: </strong>' . $puppy_data['status'] . '</p>';
+			                    echo '<li><strong>Status: </strong>' . $puppy_data['status'] . '</li>';
 		                    }
 		                    if ( $puppy_data['birthdate'] ) {
-			                    echo '<p><strong>Birthdate: </strong>' . $puppy_data['birthdate'] . '</p>';
+			                    echo '<li><strong>Birthdate: </strong>' . $puppy_data['birthdate'] . '</li>';
 		                    }
 		                    if ( $puppy_data['breed'] ) {
-			                    echo '<p><strong>Breed: </strong>' . $puppy_data['breed'] . '</p>';
+			                    echo '<li><strong>Breed: </strong>' . $puppy_data['breed'] . '</li>';
 		                    }
 		                    if ( $puppy_data['gender'] ) {
-			                    echo '<p><strong>Gender: </strong>' . $puppy_data['gender'] . '</p>';
+			                    echo '<li><strong>Gender: </strong>' . $puppy_data['gender'] . '</li>';
 		                    }
 		                    if ( $puppy_data['dam'] && $puppy_data['sire'] ) {
-			                    echo '<p><strong>Parents: </strong>' . $puppy_data['dam'] . ' (dam) and ' . $puppy_data['sire'] . ' (sire)</p>';
+			                    echo '<li><strong>Parents: </strong>' . $puppy_data['dam'] . ' (dam) and ' . $puppy_data['sire'] . ' (sire)</li>';
 		                    }
-		                    if ( $puppy_data['raiser'] ) {
-			                    echo '<p><strong>Raiser: </strong>' . $puppy_data['raiser'] . '</p>';
+		                    if ( $puppy_data['raisers'] ) {
+			                    echo '<li><strong>Raiser(s): </strong>' . $puppy_data['raisers'] . '</li>';
 		                    }
                             ?>
-                        </div>
+                        </ul>
                     </div>
 
-                    <div class="entry-content">
+                    <?php
 
-                        <?php the_content(); ?>
+                    if ( get_the_content() ) { ?>
+
+	                    <div class="entry-content">
+
+                            <h2>More about <?php echo get_the_title(); ?></h2>
+                            <?php the_content(); ?>
+
+                        </div><!-- .entry-content -->
 
                     <?php
-                    wp_link_pages( array(
-                    'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'mppg-theme' ),
-                        'after'  => '</div>',
-                    ) );
+                    }
+
                     ?>
-
-                    </div><!-- .entry-content -->
-
-
 					<footer class="entry-footer">
 						<?php mppg_theme_entry_footer(); ?>
 					</footer><!-- .entry-footer -->

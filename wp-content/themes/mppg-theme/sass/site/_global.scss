@@ -176,16 +176,13 @@ aside {
 			display: block;
 			content: "";
 			width: 2.6em;
-			border-bottom: 1px solid #666a6c;
+			border-bottom: 1px solid $color__lighter-copy;
 			margin: 0.45em 0;
 		}
 
 		a {
 			color: #fff;
 			box-shadow: none;
-			//border-bottom: 1px solid $color__border-abbr;
-			//display: block;
-			//padding: 10px 0;
 		}
 
 	}

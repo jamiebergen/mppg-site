@@ -21,7 +21,7 @@ function register_puppy_fields() {
 	$puppy_data->add_field( array(
 		'type'       => 'text',
 		'id'         => $prefix . 'name',
-		'name'       => __( 'Puppy Name', 'mppg-content' ),
+		'name'       => __( 'Puppy Name *', 'mppg-content' ),
 		'show_on_cb' => function() { return ! is_admin(); },
 		'default' => ! empty( $_POST['jmb_mppg_puppy_name'] )
 			? $_POST['jmb_mppg_puppy_name']
@@ -31,23 +31,10 @@ function register_puppy_fields() {
 //		),
 	) );
 
-	// Puppy Bio (saved as post_content)
-	$puppy_data->add_field( array(
-		'default_cb' => __NAMESPACE__ . '\maybe_set_default_from_posted_values',
-		'type' => 'wysiwyg',
-		'id'   => $prefix . 'bio',
-		'name' => __( 'Bio', 'mppg-content' ),
-		'options' => array(
-			'media_buttons' => false,
-			'teeny'         => true,
-		),
-		'show_on_cb' => function() { return ! is_admin(); },
-	) );
-
 	// Puppy Main Photo (saved as post featured image)
 	$puppy_data->add_field( array(
 		'default_cb' => __NAMESPACE__ . '\maybe_set_default_from_posted_values',
-		'name'       => __( 'Featured Image for New Post', 'mppg-content' ),
+		'name'       => __( 'Photo *', 'mppg-content' ),
 		'id'         => $prefix . 'photo',
 		'type'       => 'text',
 		'attributes' => array(
@@ -62,39 +49,17 @@ function register_puppy_fields() {
 		'default_cb'     => __NAMESPACE__ . '\maybe_set_default_from_posted_values',
 		'type'           => 'taxonomy_radio',
 		'id'             => $prefix . 'status',
-		'name'           => __( 'Status', 'mppg-content' ),
+		'name'           => __( 'Status *', 'mppg-content' ),
 		'taxonomy'       => 'status',
 		'remove_default' => true, // Removes the default metabox provided by WP core. // !!! Broken in Gutenberg
 	) );
 
-	// Email address (email field; used for future edits)
-	$puppy_data->add_field( array(
-		'default_cb' => __NAMESPACE__ . '\maybe_set_default_from_posted_values',
-		'type' => 'text_email',
-		'id'   => $prefix . 'email',
-		'name' => __( 'Raiser\'s email address', 'mppg-content' ),
-		'desc' => __( 'Used for authentication.', 'mppg-content' ),
-	) );
-
 	// Birthdate (date picker field)
-	// TODO: Need to make sure this value is saved from front end submission.
 	$puppy_data->add_field( array(
 		'default_cb' => __NAMESPACE__ . '\maybe_set_default_from_posted_values',
 		'type' => 'text_date_timestamp',
 		'id'   => $prefix . 'birthdate',
-		'name' => __( 'Birthdate', 'mppg-content' ),
-//		'attributes' => array(
-//			'required' => 'required',
-//		),
-	) );
-
-	// Breed/color (radio)
-	$puppy_data->add_field( array(
-		'default_cb' => __NAMESPACE__ . '\maybe_set_default_from_posted_values',
-		'type'             => 'radio',
-		'id'               => $prefix . 'breed',
-		'name'             => __( 'Breed/color', 'mppg-content' ),
-		'options_cb'       => __NAMESPACE__ . '\breed_select_options',
+		'name' => __( 'Birthdate *', 'mppg-content' ),
 //		'attributes' => array(
 //			'required' => 'required',
 //		),
@@ -105,8 +70,20 @@ function register_puppy_fields() {
 		'default_cb' => __NAMESPACE__ . '\maybe_set_default_from_posted_values',
 		'type'             => 'radio',
 		'id'               => $prefix . 'gender',
-		'name'             => __( 'Gender', 'mppg-content' ),
+		'name'             => __( 'Gender *', 'mppg-content' ),
 		'options_cb'       => __NAMESPACE__ . '\gender_select_options',
+//		'attributes' => array(
+//			'required' => 'required',
+//		),
+	) );
+
+	// Breed/color (radio)
+	$puppy_data->add_field( array(
+		'default_cb' => __NAMESPACE__ . '\maybe_set_default_from_posted_values',
+		'type'             => 'radio',
+		'id'               => $prefix . 'breed',
+		'name'             => __( 'Breed/color *', 'mppg-content' ),
+		'options_cb'       => __NAMESPACE__ . '\breed_select_options',
 //		'attributes' => array(
 //			'required' => 'required',
 //		),
@@ -117,7 +94,7 @@ function register_puppy_fields() {
 		'default_cb' => __NAMESPACE__ . '\maybe_set_default_from_posted_values',
 		'type'    => 'text',
 		'id'      => $prefix . 'dam',
-		'name'    => __( 'Dam', 'mppg-content' ),
+		'name'    => __( 'Dam *', 'mppg-content' ),
 		'desc'    => __( 'Puppy\'s mother', 'mppg-content' ),
 	) );
 
@@ -126,8 +103,47 @@ function register_puppy_fields() {
 		'default_cb' => __NAMESPACE__ . '\maybe_set_default_from_posted_values',
 		'type'    => 'text',
 		'id'      => $prefix . 'sire',
-		'name'    => __( 'Sire', 'mppg-content' ),
+		'name'    => __( 'Sire *', 'mppg-content' ),
 		'desc'    => __( 'Puppy\'s father', 'mppg-content' ),
+	) );
+
+	// Raisers (text field)
+	$puppy_data->add_field( array(
+		'default_cb' => __NAMESPACE__ . '\maybe_set_default_from_posted_values',
+		'type'    => 'textarea_small',
+		'id'      => $prefix . 'raisers',
+		'name'    => __( 'Raiser(s) *', 'mppg-content' ),
+		'desc'    => __( 'As you would like it to appear on the website. <br /> Include co-raisers.', 'mppg-content' ),
+	) );
+
+	// Email address (email field; used for future edits)
+	$puppy_data->add_field( array(
+		'default_cb' => __NAMESPACE__ . '\maybe_set_default_from_posted_values',
+		'type' => 'text_email',
+		'id'   => $prefix . 'email',
+		'name' => __( 'Raiser\'s email *', 'mppg-content' ),
+		'desc' => __( 'This will be used to confirm your submission.<br /> It will not be displayed on the website.', 'mppg-content' ),
+	) );
+
+	// Nickname (text field)
+	$puppy_data->add_field( array(
+		'default_cb' => __NAMESPACE__ . '\maybe_set_default_from_posted_values',
+		'type'    => 'text',
+		'id'      => $prefix . 'nickname',
+		'name'    => __( 'Nickname', 'mppg-content' ),
+	) );
+
+	// Puppy Bio (saved as post_content)
+	$puppy_data->add_field( array(
+		'default_cb' => __NAMESPACE__ . '\maybe_set_default_from_posted_values',
+		'type' => 'wysiwyg',
+		'id'   => $prefix . 'bio',
+		'name' => __( 'Bio', 'mppg-content' ),
+		'options' => array(
+			'media_buttons' => false,
+			'teeny'         => true,
+		),
+		'show_on_cb' => function() { return ! is_admin(); },
 	) );
 }
 add_action( 'cmb2_init', __NAMESPACE__ . '\register_puppy_fields' );

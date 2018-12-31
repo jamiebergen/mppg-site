@@ -31,7 +31,9 @@ function retrieve_puppy_data( $post_id ) {
 
 	$puppy_sire = get_post_meta( $post_id, 'jmb_mppg_puppy_sire', true );
 
-	//$puppy_raiser = get_post_meta( get_the_ID(), 'jmb_mppg_puppy_dam', true );
+	$puppy_raiser = get_post_meta( $post_id, 'jmb_mppg_puppy_raisers', true );
+
+	$puppy_nickname = get_post_meta( $post_id, 'jmb_mppg_puppy_nickname', true );
 
 	if ( $puppy_status ) {
 		$puppy_fields['status'] = $puppy_status;
@@ -50,6 +52,12 @@ function retrieve_puppy_data( $post_id ) {
 	}
 	if ( $puppy_sire ) {
 		$puppy_fields['sire'] = $puppy_sire;
+	}
+	if ( $puppy_raiser ) {
+		$puppy_fields['raisers'] = $puppy_raiser;
+	}
+	if ( $puppy_nickname ) {
+		$puppy_fields['nickname'] = $puppy_nickname;
 	}
 
 	return $puppy_fields;
