@@ -25,11 +25,14 @@ get_header(); ?>
     </div>
 </div>
 
-<div class="default-grid-container">
+<div class="default-grid-container narrow row-container">
     <div class="line-under">
         <h2>Welcome to our club!</h2>
-        <p class="minor-text">Mid-Peninsula Puppy Guides is a local puppy raising club affiliated with Guide Dogs for the Blind, Inc. We are located on the San Francisco peninsula in California.</p>
+        <p class="minor-text larger-text">Mid-Peninsula Puppy Guides is a local puppy raising club affiliated with Guide Dogs for the Blind, Inc. We are located on the San Francisco peninsula in California.</p>
     </div>
+</div>
+
+<div class="default-grid-container row-container">
 
     <div class="thirds">
         <div class="third-box">
@@ -52,13 +55,10 @@ get_header(); ?>
     </div>
 
     <div class="button-row">
-        <button>Find out how to get involved.</button>
-<!--        <a class="mppg-cta" href="">Find out how to get involved</a>-->
+        <a class="mppg-cta" href="">Find out how to get involved</a>
     </div>
 
 </div>
-
-
 
 <div class="banner-row default-grid-container">
     <div class="puppy-text">
@@ -69,12 +69,25 @@ get_header(); ?>
 	    $args = array( 'numberposts' => '1', 'post_type' => 'puppy' );
 	    $recent_posts = wp_get_recent_posts( $args );
 	    foreach( $recent_posts as $recent ){
-		    echo '<p><a href="' . get_permalink($recent["ID"]) . '">' .   $recent["post_title"].'</a> is a golden retriever being raised by Jamie and Bill.</p>';
+
+		    $puppy_data = retrieve_puppy_data( $recent["ID"] );
+
+	        echo '<p>';
+		        echo '<a href="' . get_permalink($recent["ID"]) . '">' .   $recent["post_title"].'</a>';
+		        echo ' is a ';
+		        echo $puppy_data['gender'];
+		        echo ' ';
+		        echo $puppy_data['breed'];
+		        if ($puppy_data['raiser']) {
+			        echo ' being raised by ';
+			        echo $puppy_data['raiser'];
+                }
+                echo '.';
+            echo '</p>';
 	    }
 	    wp_reset_query();
 	    ?>
-        <button>See all the puppies in training</button>
-<!--        <a class="mppg-cta" href=""></a>-->
+        <a class="mppg-cta" href="">See all the puppies in training</a>
     </div>
     <figure class="puppy-img">
         <img src="https://loremflickr.com/320/320/puppy" alt="" />

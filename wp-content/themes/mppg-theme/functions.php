@@ -120,24 +120,6 @@ function mppg_theme_content_width() {
 add_action( 'after_setup_theme', 'mppg_theme_content_width', 0 );
 
 /**
- * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- */
-function mppg_theme_widgets_init() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'mppg-theme' ),
-		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'mppg-theme' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-}
-add_action( 'widgets_init', 'mppg_theme_widgets_init' );
-
-/**
  * Enqueue scripts and styles.
  */
 function mppg_theme_scripts() {
@@ -169,6 +151,23 @@ function mppg_theme_template_redirect( $template ) {
 	return $template;
 }
 add_filter( 'template_include', 'mppg_theme_template_redirect' );
+
+/**
+ * Display puppies in order of birthdate.
+ */
+function mppg_theme_pre_get_posts_status( $query ) {
+	if ( $query->is_post_type_archive('puppy') && ! is_admin() && $query->is_main_query() )  {
+		$query->set( 'meta_key', 'jmb_mppg_puppy_birthdate' );
+		$query->set( 'orderby', 'meta_value' );
+		$query->set( 'order', 'DESC' );
+	}
+}
+add_action( 'pre_get_posts', 'mppg_theme_pre_get_posts_status' );
+
+/**
+ * Retrieve CMB2 meta fields.
+ */
+require get_template_directory() . '/inc/cmb2-meta.php';
 
 /**
  * Implement the Custom Header feature.

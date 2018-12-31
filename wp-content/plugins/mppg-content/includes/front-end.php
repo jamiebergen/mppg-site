@@ -67,7 +67,7 @@ function do_frontend_form_submission_shortcode( $atts = array() ) {
 	}
 
 	// Get our form
-	$output .= cmb2_get_metabox_form( $cmb, 'fake-object-id', array( 'save_button' => __( 'Submit Post', 'mppg-content' ) ) );
+	$output .= cmb2_get_metabox_form( $cmb, 'fake-object-id', array( 'save_button' => __( 'Submit', 'mppg-content' ) ) );
 
 	return $output;
 }

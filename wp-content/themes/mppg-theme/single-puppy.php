@@ -32,41 +32,27 @@ get_header();
                         <div class="puppy-stats">
 
 		                    <?php
-		                    $puppy_status = get_the_terms( get_the_ID(), 'status' )[0]->name;
 
-		                    $puppy_birthdate = get_post_meta( get_the_ID(), 'jmb_mppg_puppy_birthdate', true );
+                            $puppy_data = retrieve_puppy_data( get_the_ID() );
 
-		                    $puppy_breed_key = get_post_meta( get_the_ID(), 'jmb_mppg_puppy_breed', true );
-		                    $puppy_breed_options = JMB\MidPenPuppyGuides\breed_select_options();
-		                    $puppy_breed_name = isset( $puppy_breed_options[ $puppy_breed_key ] ) ? $puppy_breed_options[ $puppy_breed_key ] : '';
-
-		                    $puppy_gender_key = get_post_meta( get_the_ID(), 'jmb_mppg_puppy_gender', true );
-		                    $puppy_gender_options = JMB\MidPenPuppyGuides\gender_select_options();
-		                    $puppy_gender_name = isset( $puppy_gender_options[ $puppy_gender_key ] ) ? $puppy_gender_options[ $puppy_gender_key ] : '';
-
-		                    $puppy_dam = get_post_meta( get_the_ID(), 'jmb_mppg_puppy_dam', true );
-
-		                    $puppy_sire = get_post_meta( get_the_ID(), 'jmb_mppg_puppy_sire', true );
-
-		                    //$puppy_raiser = get_post_meta( get_the_ID(), 'jmb_mppg_puppy_dam', true );
-
-
-		                    if ( $puppy_status ) {
-			                    echo '<p><strong>Status: </strong>' . $puppy_status . '</p>';
+		                    if ( $puppy_data['status'] ) {
+			                    echo '<p><strong>Status: </strong>' . $puppy_data['status'] . '</p>';
 		                    }
-		                    if ( $puppy_birthdate ) {
-			                    echo '<p><strong>Birthdate: </strong>' . $puppy_birthdate . '</p>';
+		                    if ( $puppy_data['birthdate'] ) {
+			                    echo '<p><strong>Birthdate: </strong>' . $puppy_data['birthdate'] . '</p>';
 		                    }
-		                    if ( $puppy_breed_name ) {
-			                    echo '<p><strong>Breed: </strong>' . $puppy_breed_name . '</p>';
+		                    if ( $puppy_data['breed'] ) {
+			                    echo '<p><strong>Breed: </strong>' . $puppy_data['breed'] . '</p>';
 		                    }
-		                    if ( $puppy_gender_name ) {
-			                    echo '<p><strong>Gender: </strong>' . $puppy_gender_name . '</p>';
+		                    if ( $puppy_data['gender'] ) {
+			                    echo '<p><strong>Gender: </strong>' . $puppy_data['gender'] . '</p>';
 		                    }
-		                    if ( $puppy_dam && $puppy_sire ) {
-			                    echo '<p><strong>Parents: </strong>' . $puppy_dam . ' (dam) and ' . $puppy_sire . ' (sire)</p>';
+		                    if ( $puppy_data['dam'] && $puppy_data['sire'] ) {
+			                    echo '<p><strong>Parents: </strong>' . $puppy_data['dam'] . ' (dam) and ' . $puppy_data['sire'] . ' (sire)</p>';
 		                    }
-		                    // $puppy_raiser
+		                    if ( $puppy_data['raiser'] ) {
+			                    echo '<p><strong>Raiser: </strong>' . $puppy_data['raiser'] . '</p>';
+		                    }
                             ?>
                         </div>
                     </div>

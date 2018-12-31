@@ -12,10 +12,16 @@
 		flex-direction: column;
 		justify-content: center;
 
-		h1 {
+		h1,
+		.archive-description {
 			color: #ffffff;
 			text-align: center;
 		}
+
+		.archive-description {
+			@include font-size(1.2);
+		}
+	;
 	}
 
 	#primary {
@@ -52,6 +58,10 @@
 
 				h2, p {
 					margin: 0;
+				}
+
+				p {
+					color: $color__lighter-copy;
 				}
 			}
 		}

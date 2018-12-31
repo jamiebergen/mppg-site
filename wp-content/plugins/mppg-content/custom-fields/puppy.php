@@ -77,9 +77,10 @@ function register_puppy_fields() {
 	) );
 
 	// Birthdate (date picker field)
+	// TODO: Need to make sure this value is saved from front end submission.
 	$puppy_data->add_field( array(
 		'default_cb' => __NAMESPACE__ . '\maybe_set_default_from_posted_values',
-		'type' => 'text_date',
+		'type' => 'text_date_timestamp',
 		'id'   => $prefix . 'birthdate',
 		'name' => __( 'Birthdate', 'mppg-content' ),
 //		'attributes' => array(
@@ -163,7 +164,6 @@ function gender_select_options() {
 		'female'  => __( 'Female', 'mppg-content' ),
 	);
 }
-
 
 /**
  * Override the loaded value for the Puppy Name meta field.

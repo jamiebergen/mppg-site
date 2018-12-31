@@ -37,9 +37,10 @@ get_header();
 
                         the_title( '<h2 class="entry-title">', '</h2>' );
 
-                        $puppy_status = get_the_terms( get_the_ID(), 'status' )[0]->name;
-                        if ( $puppy_status ) {
-                            echo '<p>' . $puppy_status . '</p>';
+                        $puppy_data = retrieve_puppy_data( get_the_ID() );
+
+                        if ( $puppy_data['status'] ) {
+                            echo '<p>' . $puppy_data['status'] . '</p>';
                         }
 
                         ?>

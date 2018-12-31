@@ -21,7 +21,7 @@
                     <h3>Mid-Peninsula Puppy Guides</h3>
                     <ul>
                         <li><a href="https://www.facebook.com/midpenpuppyguides/">Follow us on Facebook</a></li>
-                        <li><a href="#">Accessibilty statement</a></li>
+                        <li><a href="#">Accessibilty Statement</a></li>
                     </ul>
                 </div>
 
@@ -46,7 +46,7 @@
                 </div>
             </div>
             <div class="footer-credits full-row default-grid-container">
-                <p>&copy;<?php echo date('Y'); ?> Mid-Peninsula Puppy Guides. All rights reserved. Site by <a href="<?php echo esc_url( 'https://jamiebergen.com/' ); ?>">Jamie Bergen</a></p>
+                <p>&copy;<?php echo date('Y'); ?> Mid-Peninsula Puppy Guides. All rights reserved.</p>
             </div>
 
         </div><!-- .site-info -->

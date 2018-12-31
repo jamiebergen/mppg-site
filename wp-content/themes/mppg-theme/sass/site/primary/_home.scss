@@ -1,3 +1,7 @@
+.home p {
+	@include font-size(1.2);
+}
+
 .home-top {
 	background-color: $color__darkest; /* Fallback so text will show if image doesn't load */
 	background-repeat: no-repeat;
@@ -13,7 +17,9 @@
 	}
 
 	.site-title {
-		color: $color__link;
+		color: $color__main-accent;
+		font-family: $font__main;
+		font-weight: bold;
 		position: relative;
 		font-size: 14px;
 		margin: 0;
@@ -42,6 +48,11 @@
 
 p.minor-text {
 	color: $color__lighter-copy;
+	@include font-size(1);
+
+	&.larger-text {
+		@include font-size(1.1);
+	}
 }
 .fa-paw {
 	font-size: 3.5rem;
@@ -49,15 +60,24 @@ p.minor-text {
 }
 
 .row-container {
-	margin-top: 80px;
-	margin-bottom: 80px;
+	margin-top: 50px !important;
+	margin-bottom: 50px !important;
+
+	.thirds {
+		grid-gap: 30px;
+		grid-template-columns: 1fr 1fr 1fr;
+
+		@media (max-width: 800px) {
+			display: block;
+		}
+	}
 }
 
 .banner-row {
 	@include font-size(1.2);
 	padding: 20px 30px;
 	display: grid;
-	grid-template-columns: repeat( auto-fit, minmax( auto, 320px) );
+	grid-template-columns: repeat( auto-fit, minmax( auto, 350px) );
 	grid-gap: 50px;
 	justify-content: center;
 	align-items: center;
