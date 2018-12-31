@@ -93,7 +93,8 @@ textarea{width:100%}
 form.search-form{position:relative}
 form.search-form input[type="search"]{width:100%;margin:0}
 form.search-form button.search-submit{position:absolute;right:0;top:0;height:100%;border:0;padding:0 .8em}
-.cmb2-wrap ul{list-style:none;padding:0}
+.cmb-form .cmb2-wrap ul{list-style:none;padding:0}
+.cmb-form input[type="submit"]{border:0}
 a{color:#34d}
 a:visited{color:#34d}
 a:hover,a:focus,a:active{color:#404040;background-color:#f1f1ef}
@@ -271,8 +272,7 @@ embed,iframe,object{max-width:100%}
 .gallery-columns-9{display:grid;grid-template-columns:repeat(auto-fit,minmax(auto,68px));-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;grid-gap:1em}
 .gallery-caption{display:block}
 @media only screen and (min-width:950px){.entry-content .alignwide{margin-left:-50px;margin-right:-50px;max-width:950px}
-}@media(min-width:1023px){#primary,aside{display:-webkit-box;display:-ms-flexbox;display:flex}
-#primary main,aside main{width:70%;margin:0 auto}
+}@media(min-width:1023px){#primary main,aside main{width:70%;margin:0 auto}
 }@media screen and (min-width:1024px){.js .nav-collapse{position:relative}
 .js .nav-collapse.closed{max-height:none}
 .nav-toggle{display:none}

@@ -148,6 +148,11 @@ function handle_frontend_new_post_form_submission() {
 
 	$cmb->save_fields( $new_submission_id, 'post', $sanitized_values );
 
+	// Actually save the birthdate value if available
+	if ( isset( $sanitized_values['jmb_mppg_puppy_birthdate'] ) ) {
+		update_post_meta( $new_submission_id, 'jmb_mppg_puppy_birthdate', $sanitized_values['jmb_mppg_puppy_birthdate'] );
+	}
+
 	/**
 	 * Other than post_type and post_status, we want
 	 * our uploaded attachment post to have the same post-data
