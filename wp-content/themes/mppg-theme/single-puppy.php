@@ -50,9 +50,24 @@ get_header();
 		                    if ( $puppy_data['dam'] && $puppy_data['sire'] ) {
 			                    echo '<li><strong>Parents: </strong>' . $puppy_data['dam'] . ' (dam) and ' . $puppy_data['sire'] . ' (sire)</li>';
 		                    }
-		                    if ( $puppy_data['raisers'] ) {
-			                    echo '<li><strong>Raiser(s): </strong>' . $puppy_data['raisers'] . '</li>';
-		                    }
+
+                            // Display raiser(s) or connected member(s)
+				            if ( $puppy_data['members'] ) {
+
+		                        $member_output = array();
+
+		                        echo '<li><strong>Raiser(s): </strong>';
+
+		                        foreach ( $puppy_data['members'] as $member_id ) {
+                                    $member_link = '<a href="' . get_permalink( $member_id ) . '">' . get_the_title( $member_id ) . '</a>';
+                                    array_push( $member_output, $member_link );
+                                }
+
+                                echo implode( ', ', $member_output );
+                                echo '</li>';
+		                    } elseif ( $puppy_data['raisers'] ) {
+					            echo '<li><strong>Raiser(s): </strong>' . $puppy_data['raisers'] . '</li>';
+                            }
                             ?>
                         </ul>
                     </div>

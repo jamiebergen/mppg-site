@@ -98,8 +98,9 @@ if ( ! function_exists( 'mppg_theme_setup' ) ) :
 		 *
 		 * @link https://wordpress.org/gutenberg/handbook/extensibility/theme-support/
 		 */
-		add_image_size( 'profile-pic', 300, 300, true ); // 220 pixels wide by 180 pixels tall, hard crop mode
-
+		add_image_size( 'profile-pic', 300, 300, true );
+		add_image_size( 'small-profile-pic', 150, 150, true );
+		add_image_size( 'member-single', 500, 500 );
 	}
 endif;
 add_action( 'after_setup_theme', 'mppg_theme_setup' );
@@ -156,7 +157,7 @@ add_filter( 'template_include', 'mppg_theme_template_redirect' );
  * Display puppies in order of birthdate.
  */
 function mppg_theme_pre_get_posts_status( $query ) {
-	if ( $query->is_post_type_archive('puppy') && ! is_admin() && $query->is_main_query() )  {
+	if ( ( $query->is_post_type_archive( 'puppy' ) || $query->is_tax( 'status' ) ) && ! is_admin() && $query->is_main_query() )  {
 		$query->set( 'meta_key', 'jmb_mppg_puppy_birthdate' );
 		$query->set( 'orderby', 'meta_value' );
 		$query->set( 'order', 'DESC' );

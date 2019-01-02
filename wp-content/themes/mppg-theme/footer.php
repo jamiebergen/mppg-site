@@ -45,11 +45,12 @@
 	                ?>
                 </div>
             </div>
-            <div class="footer-credits full-row default-grid-container">
+        </div><!-- .site-info -->
+        <div class="footer-credits">
+            <div class="default-grid-container">
                 <p>&copy;<?php echo date('Y'); ?> Mid-Peninsula Puppy Guides. All rights reserved.</p>
             </div>
-
-        </div><!-- .site-info -->
+        </div>
 
 	</footer><!-- #colophon -->
 </div><!-- #page -->

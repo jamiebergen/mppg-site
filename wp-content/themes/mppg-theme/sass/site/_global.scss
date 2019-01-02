@@ -148,17 +148,18 @@ aside {
         margin-top: 2em;
         padding-bottom: 1.5em;
 	    padding-top: 1em;
-
-	    .footer-credits {
-		    text-align: center;
-
-		    p {
-			    margin: 0;
-			    margin-top: 2em;
-			    @include font-size(.8);
-		    }
-	    }
     }
+
+	.footer-credits {
+		text-align: center;
+		background-color: $color__background-button-hover;
+
+		p {
+			margin: 0;
+			@include font-size(.8);
+			padding: 1em 0;
+		}
+	}
 
 	h3 {
 		font-family: $font__main;

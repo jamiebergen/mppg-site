@@ -60,5 +60,62 @@ function retrieve_puppy_data( $post_id ) {
 		$puppy_fields['nickname'] = $puppy_nickname;
 	}
 
+	// Get connected members
+	$connected_members = new WP_Query( array(
+		'connected_type' => 'members_to_puppies',
+		'connected_items' => get_queried_object(),
+		'nopaging' => true,
+	) );
+
+	if ( $connected_members->have_posts() ) {
+
+		$puppy_fields['members'] = array();
+
+		while ( $connected_members->have_posts() ) {
+			$connected_members->the_post();
+
+			array_push( $puppy_fields['members'], get_the_ID() );
+		}
+	}
+	wp_reset_postdata();
+
 	return $puppy_fields;
+}
+
+/**
+ * Retrieves member field data
+ *
+ * @param int $post_id Post id to retrieve data from.
+ * @return array
+ */
+function retrieve_member_data( $post_id ) {
+
+	$member_fields = array();
+
+	$member_since = get_post_meta( $post_id, 'jmb_mppg_member_since', true );
+
+	if ( $member_since ) {
+		$member_fields['since'] = $member_since;
+	}
+
+	// Get connected puppies
+	$connected_puppies = new WP_Query( array(
+		'connected_type' => 'members_to_puppies',
+		'connected_items' => get_queried_object(),
+		'nopaging' => true,
+	) );
+
+	if ( $connected_puppies->have_posts() ) {
+
+		$member_fields['puppies'] = array();
+
+		while ( $connected_puppies->have_posts() ) {
+			$connected_puppies->the_post();
+
+			array_push( $member_fields['puppies'], get_the_ID() );
+		}
+	}
+	wp_reset_postdata();
+
+	return $member_fields;
 }
