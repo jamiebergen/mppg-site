@@ -166,6 +166,36 @@ function mppg_theme_pre_get_posts_status( $query ) {
 add_action( 'pre_get_posts', 'mppg_theme_pre_get_posts_status' );
 
 /**
+ * Remove prefix from archive titles.
+ */
+function mppg_theme_filter_archive_title( $title ) {
+
+	if ( is_post_type_archive( array('puppy', 'member') ) ) {
+		$title = post_type_archive_title( '', false );
+	}
+	if ( is_tax( 'status' ) ) {
+		$title = single_term_title( '', false );
+	}
+	return $title;
+}
+add_filter( 'get_the_archive_title', 'mppg_theme_filter_archive_title' );
+
+/**
+ * Add active menu class for terms, archives, and single cpt posts.
+ */
+function mppg_theme_menu_item_classes( $classes, $item, $args ) {
+
+	if( ( is_singular( 'puppy' ) || is_post_type_archive( 'puppy' ) || is_tax( 'status' ) ) && 'Puppies' == $item->title ) {
+		$classes[] = 'current-menu-item';
+	}
+	if( ( is_singular( 'member' ) || is_post_type_archive( 'member' ) ) && 'Members' == $item->title ) {
+		$classes[] = 'current-menu-item';
+	}
+	return array_unique( $classes );
+}
+add_filter( 'nav_menu_css_class', 'mppg_theme_menu_item_classes', 10, 3 );
+
+/**
  * Retrieve CMB2 meta fields.
  */
 require get_template_directory() . '/inc/cmb2-meta.php';

@@ -68,6 +68,10 @@ get_header();
 		                    } elseif ( $puppy_data['raisers'] ) {
 					            echo '<li><strong>Raiser(s): </strong>' . $puppy_data['raisers'] . '</li>';
                             }
+
+		                    if ( $puppy_data['nickname'] ) {
+			                    echo '<li><strong>Nickname: </strong>' . $puppy_data['nickname'] . '</li>';
+		                    }
                             ?>
                         </ul>
                     </div>

@@ -61,42 +61,52 @@ get_header(); ?>
 
     <div class="banner-row default-grid-container newest-puppy">
         <div class="puppy-text">
-            <h2>Meet our newest member.</h2>
+            <h2>Meet our newest members.</h2>
 
             <?php
-            // Retrieve info for latest puppy
-            $args = array( 'numberposts' => '1', 'post_type' => 'puppy' );
-            $recent_posts = wp_get_recent_posts( $args );
-            foreach( $recent_posts as $recent ){
+            // Retrieve info for a randomly selected current puppy
+            $args = array(
+	            'posts_per_page'    => 1,
+	            'post_type'         => 'puppy',
+	            'post_status'       => 'publish',
+	            'orderby'   => 'rand',
+	            'tax_query'         => array(
+		            array(
+			            'taxonomy'  => 'status',
+			            'field'     => 'slug',
+			            'terms'     => 'current-puppy',
+		            )
+	            ),
+            );
 
-                $puppy_data = retrieve_puppy_data( $recent["ID"] );
+            $current_puppy = get_posts( $args );
 
-                echo '<p class="minor-text larger-text">';
-                    echo $recent["post_title"];
-                    echo ' is a ';
-                    echo strtolower( $puppy_data['gender'] );
-                    echo ' ';
-                    echo strtolower( $puppy_data['breed'] );
-                    if ( $puppy_data['raisers'] ) {
-                        echo ' being raised by ';
-                        echo $puppy_data['raisers'];
-                    }
-                    echo '.';
-                echo '</p>';
-
-                echo '<a class="mppg-cta" href="' . get_permalink($recent["ID"]) . '">' . 'Learn more about ' . $recent["post_title"] . '</a>';
-
+            foreach( $current_puppy as $puppy ){
+                $current_puppy_id = $puppy->ID;
             }
-            wp_reset_query();
+
+            $puppy_data = retrieve_puppy_data( $current_puppy_id );
+
+            echo '<p class="minor-text larger-text">';
+                echo get_the_title( $current_puppy_id );
+                echo ' is a ';
+                echo strtolower( $puppy_data['gender'] );
+                echo ' ';
+                echo strtolower( $puppy_data['breed'] );
+                if ( $puppy_data['raisers'] ) {
+                    echo ' being raised by ';
+                    echo $puppy_data['raisers'];
+                }
+                echo '.';
+            echo '</p>';
+
+            echo '<a class="mppg-cta" href="' . get_term_link( 'current-puppy', 'status' ) . '">' . 'See all of our current puppies</a>';
+
             ?>
-
         </div>
-
-        <?php
-        echo get_the_post_thumbnail( $recent["ID"], 'profile-pic' );
-        ?>
-
-
+	    <?php
+	    echo get_the_post_thumbnail( $current_puppy_id, 'profile-pic' );
+	    ?>
     </div>
 
 </div>
