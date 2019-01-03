@@ -19,13 +19,6 @@ get_header();
 		</div>
 	</header><!-- .entry-header -->
 
-    <?php
-    if ( is_post_type_archive( 'puppy' ) ) {
-        // TODO: Add search and filtering
-        echo do_shortcode( "[output_filter_controls post_type='puppy']" );
-    }
-    ?>
-
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
@@ -65,6 +58,17 @@ get_header();
 
 		</main><!-- #main -->
         <?php the_posts_navigation(); ?>
+
+		<?php
+        echo '<div class="default-grid-container">';
+
+            echo '<div class="search-wrapper">';
+            echo '<p>Search for a specific puppy:</p>';
+            echo get_search_form();
+            echo '</div>';
+
+        echo '</div>';
+		?>
 
 	</div><!-- #primary -->
 
