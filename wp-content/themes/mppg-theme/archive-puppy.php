@@ -21,8 +21,8 @@ get_header();
 
     <?php
     if ( is_post_type_archive( 'puppy' ) ) {
-        // TODO: Add search and filtering option
-	    //echo do_shortcode( '[searchandfilter fields="search,status"]' );
+        // TODO: Add search and filtering
+        echo do_shortcode( "[output_filter_controls post_type='puppy']" );
     }
     ?>
 

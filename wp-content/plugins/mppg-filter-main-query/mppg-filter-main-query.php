@@ -28,24 +28,35 @@ function register_assets() {
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\register_assets' );
 
 /**
- * Output taxonomy filters after post type archive description.
+ * Output taxonomy filters as a shortcode.
  *
  * @since  2.0.0
  *
  * @param  string $content Archive description.
  * @return string          Modified archive description.
  */
-function output_filter_controls( $content ) {
-	if ( ! is_post_type_archive() ) {
-		return $content;
+
+function output_filter_controls( $atts = array() ) {
+
+	$atts = shortcode_atts(
+		array(
+			'post_type' => 'puppy',
+		),
+		$atts,
+		'output_filter_controls'
+	);
+
+	if ( ! is_post_type_archive( $atts['post_type'] ) ) {
+		return;
 	}
 
 	$taxonomies = get_object_taxonomies( get_post_type() );
 
 	$filter_controls = get_filter_controls( $taxonomies );
-	return $filter_controls . $content;
+	return $filter_controls;
 }
-add_filter( 'get_the_archive_description', __NAMESPACE__ . '\output_filter_controls' );
+add_shortcode( 'output_filter_controls', __NAMESPACE__ . '\output_filter_controls' );
+
 
 /**
  * Get HTML markup for all desired taxonomy filters.
@@ -71,13 +82,11 @@ function get_filter_controls( $taxonomies = [ 'category', 'post_tag' ] ) {
 		<form method="GET" class="fmq-filters-wrap">
 		<p>%1$s</p>
 		%2$s
-		%3$s
-		<button type="submit" class="button">%4$s</button>
+		<button type="submit" class="button">%3$s</button>
 		</form>
 		',
 		__( 'Narrow the results by selecting the appropriate filters.', 'fmq' ),
 		implode( "\n", $controls ),
-		get_favorites_control(),
 		__( 'Submit', 'fmq' )
 	);
 
@@ -141,23 +150,6 @@ function get_filter_control( $taxonomy = 'category' ) {
 	);
 
 	return apply_filters( 'fmq_get_filter_control', $output, $taxonomy, $terms );
-}
-
-/**
- * Get checkbox input for "Favorites" filter.
- *
- * @since  2.0.0
- *
- * @return string HTML Markup.
- */
-function get_favorites_control() {
-	$output = sprintf(
-		'<label for="filter-favorites"><input type="checkbox" name="filter-favorites" class="fmq-filter-favorites" value="" data-posttype="%1$s" %2$s> %3$s</label>',
-		get_post_type(),
-		checked( array_key_exists( 'favorites', get_applied_filters() ), true, false ),
-		__( 'Show only favorites', 'fmq' )
-	);
-	return apply_filters( 'fqm_get_favorites_control', $output );
 }
 
 /**
@@ -247,12 +239,6 @@ function filter_query( $query, $filters = [] ) {
 
 	$tax_query = [];
 
-	// Favorites are a special case
-	if ( isset( $filters['favorites'] ) ) {
-		$query->set( 'post__in', json_decode( $filters['favorites'] ) );
-		unset( $filters['favorites'] );
-	}
-
 	// for each remaining taxonomy filter, add to the tax query
 	if ( is_array( $filters ) && ! empty( $filters ) ) {
 		foreach ( $filters as $taxonomy => $terms ) {
@@ -271,43 +257,4 @@ function filter_query( $query, $filters = [] ) {
 	}
 
 	return $query;
-}
-
-/**
- * Output an "Add to Favorite" button.
- *
- * @since 2.0.0
- *
- * @param integer $post_id Post ID.
- */
-function output_favorite_button( $post_id = 0 ) {
-	echo get_favorite_button( $post_id );
-}
-add_action( 'fmq_favorite', __NAMESPACE__ . '\output_favorite_button' );
-
-/**
- * Get HTML markup for "Add to Favorite" button.
- *
- * @since  2.0.0
- *
- * @param  integer $post_id Post ID.
- * @return string           HTML markup.
- */
-function get_favorite_button( $post_id = 0 ) {
-
-	if ( ! absint( $post_id ) ) {
-		$post_id = get_the_ID();
-	}
-
-	wp_enqueue_script( 'fmq' );
-
-	$button = sprintf(
-		'<button class="fmq-favorite" data-postid="%1$d" data-posttype="%2$s" data-addtext="%3$s" data-removetext="%4$s" style="display:none;"></button>',
-		absint( $post_id ),
-		get_post_type( $post_id ),
-		__( 'Add to Favorites', 'fmq' ),
-		__( 'Remove from Favorites', 'fmq' )
-	);
-
-	return apply_filters( 'fmq_get_favorite_button', $button, $post_id );
 }
