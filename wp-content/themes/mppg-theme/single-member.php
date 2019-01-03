@@ -31,7 +31,12 @@ get_header();
 
 	                        $member_data = retrieve_member_data( get_the_ID() );
 
-                            the_post_thumbnail( 'member-single' );
+	                        if ( get_the_post_thumbnail() ) {
+		                        the_post_thumbnail( 'member-single' );
+	                        } else {
+		                        echo '<i class="fas fa-paw"></i>';
+	                        }
+
 	                        if ( $member_data['since'] ) {
 		                        echo '<p><strong>Member since: </strong>' . $member_data['since'] . '</p>';
 	                        }

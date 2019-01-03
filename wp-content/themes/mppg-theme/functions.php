@@ -147,8 +147,9 @@ add_action( 'wp_enqueue_scripts', 'mppg_theme_scripts' );
  * Use puppy archive template for status taxonomy pages.
  */
 function mppg_theme_template_redirect( $template ) {
-	if ( is_tax( 'status' ) )
+	if ( is_tax( 'status' ) ) {
 		$template = get_query_template( 'archive-puppy' );
+	}
 	return $template;
 }
 add_filter( 'template_include', 'mppg_theme_template_redirect' );
@@ -164,6 +165,28 @@ function mppg_theme_pre_get_posts_status( $query ) {
 	}
 }
 add_action( 'pre_get_posts', 'mppg_theme_pre_get_posts_status' );
+
+/**
+ * Display members in order of name.
+ */
+function mppg_theme_pre_get_posts_members( $query ) {
+	if ( $query->is_post_type_archive( 'member' )  && ! is_admin() && $query->is_main_query() )  {
+		$query->set( 'orderby', 'title' );
+		$query->set( 'order', 'ASC' );
+	}
+}
+add_action( 'pre_get_posts', 'mppg_theme_pre_get_posts_members' );
+
+/**
+ * Display only puppies in search results.
+ */
+function mppg_theme_only_puppies_in_search( $query ) {
+	if ( $query->is_main_query() && ! is_admin() && is_search() ) {
+		$query->set( 'post_type', 'puppy' );
+	}
+	return $query;
+}
+add_filter( 'pre_get_posts','mppg_theme_only_puppies_in_search' );
 
 /**
  * Remove prefix from archive titles.

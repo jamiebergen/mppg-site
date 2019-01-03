@@ -3,7 +3,9 @@
 .post-type-archive-puppy,
 .tax-status,
 .single-member,
-.post-type-archive-member {
+.post-type-archive-member,
+.error404,
+.search {
 	.entry-header,
 	.page-header {
 		background-image: linear-gradient(rgba(62, 62, 62, 0.6), rgba(62, 62, 62, 0.6)), url('images/golden-retriever-eyes.jpg');
@@ -29,7 +31,8 @@
 
 .post-type-archive-puppy,
 .tax-status,
-.post-type-archive-member {
+.post-type-archive-member,
+.search {
 	#primary {
 
 		main {
@@ -54,6 +57,17 @@
 		max-width: 100%;
 		height: auto;
 		border-radius: 100%;
+	}
+
+	svg {
+		border: 5px solid $color__main-accent;
+		max-width: 300px;
+		max-height: 300px;
+		border-radius: 100%;
+		padding: 70px;
+		width: 100% !important;
+		height: 100%;
+		margin-bottom: 6px;
 	}
 
 	h2, p {
@@ -148,14 +162,24 @@
 			p {
 				margin-top: 0.2em;
 			}
+
+			svg {
+				border: 5px solid $color__main-accent;
+				max-width: 300px;
+				max-height: 300px;
+				border-radius: 100%;
+				padding: 70px;
+				width: 100% !important;
+				height: 100%;
+				margin-bottom: 6px;
+			}
 		}
 
 		h2 {
 			@include font-size(1.5);
 			text-align: center;
 			margin: 0 0 0.4em 0;
-			background-color: $color__light-background;
-			padding: 10px;
+			padding-bottom: 10px;
 		}
 
 		ul.member-puppies {

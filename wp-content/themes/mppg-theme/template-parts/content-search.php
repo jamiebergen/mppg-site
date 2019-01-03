@@ -9,27 +9,18 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+<a class="puppy-archive-block" href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark">
+	<?php
 
-		<?php if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php
-			mppg_theme_posted_on();
-			mppg_theme_posted_by();
-			?>
-		</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
+	the_post_thumbnail( 'profile-pic' );
 
-	<?php mppg_theme_post_thumbnail(); ?>
+	the_title( '<h2 class="entry-title">', '</h2>' );
 
-	<div class="entry-summary">
-		<?php the_excerpt(); ?>
-	</div><!-- .entry-summary -->
+	$puppy_data = retrieve_puppy_data( get_the_ID() );
 
-	<footer class="entry-footer">
-		<?php mppg_theme_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-<?php the_ID(); ?> -->
+	if ( $puppy_data['status'] ) {
+		echo '<p>' . $puppy_data['status'] . '</p>';
+	}
+
+	?>
+</a>

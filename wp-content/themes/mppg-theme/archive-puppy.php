@@ -19,6 +19,13 @@ get_header();
 		</div>
 	</header><!-- .entry-header -->
 
+    <?php
+    if ( is_post_type_archive( 'puppy' ) ) {
+        // TODO: Add search and filtering option
+	    //echo do_shortcode( '[searchandfilter fields="search,status"]' );
+    }
+    ?>
+
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 

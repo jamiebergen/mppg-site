@@ -94,8 +94,14 @@ function retrieve_member_data( $post_id ) {
 
 	$member_since = get_post_meta( $post_id, 'jmb_mppg_member_since', true );
 
+	$member_leader = get_post_meta( $post_id, 'jmb_mppg_member_leader', true );
+
 	if ( $member_since ) {
 		$member_fields['since'] = $member_since;
+	}
+
+	if ( $member_leader ) {
+		$member_fields['leader'] = $member_leader;
 	}
 
 	// Get connected puppies
@@ -103,6 +109,9 @@ function retrieve_member_data( $post_id ) {
 		'connected_type' => 'members_to_puppies',
 		'connected_items' => get_queried_object(),
 		'nopaging' => true,
+		'meta_key' => 'jmb_mppg_puppy_birthdate',
+		'orderby' => 'meta_value',
+		'order' => 'DESC',
 	) );
 
 	if ( $connected_puppies->have_posts() ) {

@@ -33,15 +33,20 @@ get_header();
 					<a class="puppy-archive-block" href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark">
 						<?php
 
-						the_post_thumbnail( 'profile-pic' );
+                        if ( get_the_post_thumbnail() ) {
+	                        the_post_thumbnail( 'profile-pic' );
+                        } else {
+                            echo '<i class="fas fa-paw"></i>';
+                        }
+
 
 						the_title( '<h2 class="entry-title">', '</h2>' );
 
-						//$puppy_data = retrieve_puppy_data( get_the_ID() );
+						$member_data = retrieve_member_data( get_the_ID() );
 
-//						if ( $puppy_data['status'] ) {
-//							echo '<p>' . $puppy_data['status'] . '</p>';
-//						}
+						if ( $member_data['leader'] ) {
+							echo '<p>Leader</p>';
+						}
 
 						?>
 					</a>
