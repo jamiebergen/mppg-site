@@ -70,6 +70,10 @@ aside {
     .site-branding {
         flex: 1;
         padding-right: 4%;
+
+	    @media screen and (max-width: 500px) {
+		    text-align: center;
+	    }
     }
 
     .main-navigation {
@@ -80,7 +84,7 @@ aside {
         display: flex;
         justify-content: space-between;
 
-        @media screen and (max-width: 1150px) {
+        @media screen and (max-width: 1023px) {
             flex-direction: column;
         }
 

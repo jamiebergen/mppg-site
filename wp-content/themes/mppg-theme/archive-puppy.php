@@ -57,7 +57,17 @@ get_header();
 			?>
 
 		</main><!-- #main -->
-        <?php the_posts_navigation(); ?>
+        <?php
+
+        the_posts_navigation(
+	        array(
+		        'prev_text' => __( 'More', 'mppg-theme' ),
+		        'next_text' => __( 'More', 'mppg-theme' ),
+		        'screen_reader_text' => __( 'Posts navigation', 'mppg-theme' )
+	        )
+        );
+
+        ?>
 
 		<?php
         echo '<div class="default-grid-container">';
