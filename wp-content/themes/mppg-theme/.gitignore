@@ -17,6 +17,7 @@ node_modules/
 *.zip
 *.tgz
 *.map
+package-lock.json
 
 # Logs and databases #
 ######################
@@ -61,6 +62,8 @@ assets/bower_components/*
 # Compiled Files and Build Dirs #
 ##########
 /README.html
+style.css
+style.min.css
 
 # PhpStrom Project Files #
 .idea/

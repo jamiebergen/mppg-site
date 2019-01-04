@@ -61,6 +61,7 @@ const cache = require( 'gulp-cache' ); // Cache files in stream for later use.
 const remember = require( 'gulp-remember' ); //  Adds all the files it has ever seen back into the stream.
 const plumber = require( 'gulp-plumber' ); // Prevent pipe breaking caused by errors from gulp plugins.
 const beep = require( 'beepbeep' );
+const zip = require('gulp-zip'); // To generate a theme zip file
 
 /**
  * Custom Error Handler.
@@ -320,6 +321,28 @@ gulp.task( 'images', () => {
  */
 gulp.task( 'clearCache', function( done ) {
 	return cache.clearAll( done );
+});
+
+/**
+ * Task: `zip`.
+ *
+ * Generates a zip file of the theme that can be manually installed
+ *
+ * Source: https://www.briancoords.com/blog/wordpress-theme-or-plugin-zip-file-with-gulp/
+ */
+gulp.task( 'zip', function () {
+    return gulp.src([
+        './**/*',
+        '!./{node_modules,node_modules/**/*}',
+        '!./{sass,sass/**/*}',
+        '!./style.css.map',
+        '!./gulpfile.babel.js',
+        '!./package.json',
+        '!./package-lock.json',
+		'!./wpgulp.config.js'
+    ])
+        .pipe(zip('mppg-theme.zip'))
+        .pipe(gulp.dest('./../'));
 });
 
 /**
