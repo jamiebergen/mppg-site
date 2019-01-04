@@ -26,7 +26,7 @@
                 </div>
 
                 <div class="third-box">
-                    <h3>Quick links for prospective members</h3>
+                    <h3>For prospective members</h3>
 	                <?php
 	                wp_nav_menu( array(
 		                'theme_location'  => 'menu-2',
@@ -36,7 +36,7 @@
                 </div>
 
                 <div class="third-box">
-                    <h3>Quick links for current members</h3>
+                    <h3>For current members</h3>
 	                <?php
 	                wp_nav_menu( array(
 		                'theme_location'  => 'menu-3',
