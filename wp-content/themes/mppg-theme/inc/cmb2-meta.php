@@ -35,6 +35,8 @@ function retrieve_puppy_data( $post_id ) {
 
 	$puppy_nickname = get_post_meta( $post_id, 'jmb_mppg_puppy_nickname', true );
 
+	$puppy_social = get_post_meta( $post_id, 'jmb_mppg_puppy_social', true );
+
 	if ( $puppy_status ) {
 		$puppy_fields['status'] = $puppy_status;
 	}
@@ -59,12 +61,17 @@ function retrieve_puppy_data( $post_id ) {
 	if ( $puppy_nickname ) {
 		$puppy_fields['nickname'] = $puppy_nickname;
 	}
+	if ( $puppy_social ) {
+		$puppy_fields['social'] = esc_url( $puppy_social );
+	}
 
 	// Get connected members
 	$connected_members = new WP_Query( array(
 		'connected_type' => 'members_to_puppies',
 		'connected_items' => get_queried_object(),
 		'nopaging' => true,
+		'orderby' => 'title',
+		'order' => 'ASC',
 	) );
 
 	if ( $connected_members->have_posts() ) {

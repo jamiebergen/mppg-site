@@ -72,6 +72,11 @@ get_header();
 		                    if ( $puppy_data['nickname'] ) {
 			                    echo '<li><strong>Nickname: </strong>' . $puppy_data['nickname'] . '</li>';
 		                    }
+
+		                    if ( $puppy_data['social'] ) {
+			                    echo '<li><strong>Social: </strong><a href="' . $puppy_data['social'] . '">' . $puppy_data['social'] . '</a></li>';
+		                    }
+
                             ?>
                         </ul>
                     </div>
