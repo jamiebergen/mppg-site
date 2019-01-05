@@ -231,7 +231,9 @@ add_filter( 'cmb2_override_jmb_mppg_puppy_name_meta_value', __NAMESPACE__ . '\ov
  * @return string               Overridden meta value.
  */
 function override_puppy_bio_value( $data, $object_id, $data_args, $field_object ) {
-	if ( 'puppy' === get_post_type( $object_id ) ) {
+	if ( 'puppy' !== get_post_type( $object_id ) ) {
+		return;
+	} else {
 		$post = get_post( $object_id );
 		$data = $post->post_content;
 	}

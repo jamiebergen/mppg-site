@@ -118,7 +118,9 @@ add_filter( 'cmb2_override_jmb_mppg_member_name_meta_value', __NAMESPACE__ . '\o
  * @return string               Overridden meta value.
  */
 function override_member_bio_value( $data, $object_id, $data_args, $field_object ) {
-	if ( 'member' === get_post_type( $object_id ) ) {
+	if ( 'member' !== get_post_type( $object_id ) ) {
+		return;
+	} else {
 		$post = get_post( $object_id );
 		$data = $post->post_content;
 	}
