@@ -26,9 +26,9 @@ function register_puppy_fields() {
 		'default' => ! empty( $_POST['jmb_mppg_puppy_name'] )
 			? $_POST['jmb_mppg_puppy_name']
 			: __( '', 'mppg-content' ),
-//		'attributes' => array(
-//			'required' => 'required',
-//		),
+		'attributes' => array(
+			'required' => 'required',
+		),
 	) );
 
 	// Puppy Main Photo (saved as post featured image)
@@ -39,7 +39,6 @@ function register_puppy_fields() {
 		'type'       => 'text',
 		'attributes' => array(
 			'type'     => 'file', // Let's use a standard file upload field
-			//'required' => 'required',
 		),
 		'show_on_cb' => function() { return ! is_admin(); },
 	) );
@@ -60,9 +59,9 @@ function register_puppy_fields() {
 		'type' => 'text_date_timestamp',
 		'id'   => $prefix . 'birthdate',
 		'name' => __( 'Birthdate *', 'mppg-content' ),
-//		'attributes' => array(
-//			'required' => 'required',
-//		),
+		'attributes' => array(
+			'required' => 'required',
+		),
 	) );
 
 	// Gender (radio)
@@ -72,9 +71,9 @@ function register_puppy_fields() {
 		'id'               => $prefix . 'gender',
 		'name'             => __( 'Gender *', 'mppg-content' ),
 		'options_cb'       => __NAMESPACE__ . '\gender_select_options',
-//		'attributes' => array(
-//			'required' => 'required',
-//		),
+		'attributes' => array(
+			'required' => 'required',
+		),
 	) );
 
 	// Breed/color (radio)
@@ -84,9 +83,9 @@ function register_puppy_fields() {
 		'id'               => $prefix . 'breed',
 		'name'             => __( 'Breed/color *', 'mppg-content' ),
 		'options_cb'       => __NAMESPACE__ . '\breed_select_options',
-//		'attributes' => array(
-//			'required' => 'required',
-//		),
+		'attributes' => array(
+			'required' => 'required',
+		),
 	) );
 
 	// Dam (text field)
@@ -96,6 +95,9 @@ function register_puppy_fields() {
 		'id'      => $prefix . 'dam',
 		'name'    => __( 'Dam *', 'mppg-content' ),
 		'desc'    => __( 'Puppy\'s mother', 'mppg-content' ),
+		'attributes' => array(
+			'required' => 'required',
+		),
 	) );
 
 	// Sire (text field)
@@ -105,6 +107,9 @@ function register_puppy_fields() {
 		'id'      => $prefix . 'sire',
 		'name'    => __( 'Sire *', 'mppg-content' ),
 		'desc'    => __( 'Puppy\'s father', 'mppg-content' ),
+		'attributes' => array(
+			'required' => 'required',
+		),
 	) );
 
 	// Raisers (text field)
@@ -114,6 +119,9 @@ function register_puppy_fields() {
 		'id'      => $prefix . 'raisers',
 		'name'    => __( 'Raiser(s) *', 'mppg-content' ),
 		'desc'    => __( 'As you would like it to appear on the website. <br /> Include co-raisers.', 'mppg-content' ),
+		'attributes' => array(
+			'required' => 'required',
+		),
 	) );
 
 	// Email address (email field; used for future edits)
@@ -131,6 +139,14 @@ function register_puppy_fields() {
 		'type'    => 'text',
 		'id'      => $prefix . 'nickname',
 		'name'    => __( 'Nickname', 'mppg-content' ),
+	) );
+
+	// Social media link (url field)
+	$puppy_data->add_field( array(
+		'default_cb' => __NAMESPACE__ . '\maybe_set_default_from_posted_values',
+		'type'    => 'text_url',
+		'id'      => $prefix . 'social',
+		'name'    => __( 'Social media link', 'mppg-content' ),
 	) );
 
 	// Puppy Bio (saved as post_content)
@@ -220,6 +236,6 @@ function override_puppy_bio_value( $data, $object_id, $data_args, $field_object 
 		$data = $post->post_content;
 	}
 
-	return $data;
+	return wpautop( $data );
 }
 add_filter( 'cmb2_override_jmb_mppg_puppy_bio_meta_value', __NAMESPACE__ . '\override_puppy_bio_value', 10, 4 );

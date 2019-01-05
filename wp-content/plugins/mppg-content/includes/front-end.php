@@ -207,6 +207,14 @@ function frontend_form_photo_upload( $post_id, $attachment_post_data = array(), 
 		return;
 	}
 
+	//Make sure only approved file types are accepted
+	$allowed =  array('gif', 'png' ,'jpg', 'jpeg');
+	$filename = $_FILES[$photo_field_id]['name'];
+	$ext = strtolower( pathinfo( $filename, PATHINFO_EXTENSION ) );
+	if( !in_array( $ext, $allowed ) ) {
+		return;
+	}
+
 	// Filter out empty array values
 	$files = array_filter( $_FILES[$photo_field_id] );
 

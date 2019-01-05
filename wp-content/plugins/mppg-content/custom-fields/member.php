@@ -26,9 +26,9 @@ function register_member_fields() {
 		'default' => ! empty( $_POST['jmb_mppg_member_name'] )
 			? $_POST['jmb_mppg_member_name']
 			: __( '', 'mppg-content' ),
-//		'attributes' => array(
-//			'required' => 'required',
-//		),
+		'attributes' => array(
+			'required' => 'required',
+		),
 	) );
 
 	// Member Main Photo (saved as post featured image)
@@ -39,7 +39,6 @@ function register_member_fields() {
 		'type'       => 'text',
 		'attributes' => array(
 			'type'     => 'file', // Let's use a standard file upload field
-			//'required' => 'required',
 		),
 		'show_on_cb' => function() { return ! is_admin(); },
 	) );
@@ -124,6 +123,6 @@ function override_member_bio_value( $data, $object_id, $data_args, $field_object
 		$data = $post->post_content;
 	}
 
-	return $data;
+	return wpautop( $data );
 }
 add_filter( 'cmb2_override_jmb_mppg_member_bio_meta_value', __NAMESPACE__ . '\override_member_bio_value', 10, 4 );
