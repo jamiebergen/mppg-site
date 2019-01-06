@@ -1,0 +1,13 @@
+.wp-pagenavi {
+	text-align: center;
+
+	.current, a {
+		padding: 5px;
+		@include font-size(1.1);
+	}
+	
+	a {
+		text-decoration: none;
+		color: $color__darkest;
+	}
+}
