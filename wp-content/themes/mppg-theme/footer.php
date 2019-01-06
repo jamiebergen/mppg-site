@@ -19,10 +19,12 @@
             <div class="thirds default-grid-container">
                 <div class="third-box">
                     <h3>Mid-Peninsula Puppy Guides</h3>
-                    <ul>
-                        <li><a href="https://www.facebook.com/midpenpuppyguides/">Follow us on Facebook</a></li>
-                        <li><a href="#">Accessibilty Statement</a></li>
-                    </ul>
+	                <?php
+	                wp_nav_menu( array(
+		                'theme_location'  => 'menu-4',
+		                'menu_id'         => 'footer-left-menu',
+	                ) );
+	                ?>
                 </div>
 
                 <div class="third-box">
