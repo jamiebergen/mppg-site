@@ -125,13 +125,13 @@ function register_puppy_fields() {
 	) );
 
 	// Email address (email field; used for future edits)
-	$puppy_data->add_field( array(
-		'default_cb' => __NAMESPACE__ . '\maybe_set_default_from_posted_values',
-		'type' => 'text_email',
-		'id'   => $prefix . 'email',
-		'name' => __( 'Raiser\'s email *', 'mppg-content' ),
-		'desc' => __( 'This will be used to confirm your submission.<br /> It will not be displayed on the website.', 'mppg-content' ),
-	) );
+//	$puppy_data->add_field( array(
+//		'default_cb' => __NAMESPACE__ . '\maybe_set_default_from_posted_values',
+//		'type' => 'text_email',
+//		'id'   => $prefix . 'email',
+//		'name' => __( 'Raiser\'s email *', 'mppg-content' ),
+//		'desc' => __( 'This will be used to confirm your submission.<br /> It will not be displayed on the website.', 'mppg-content' ),
+//	) );
 
 	// Nickname (text field)
 	$puppy_data->add_field( array(
@@ -154,7 +154,7 @@ function register_puppy_fields() {
 		'default_cb' => __NAMESPACE__ . '\maybe_set_default_from_posted_values',
 		'type' => 'wysiwyg',
 		'id'   => $prefix . 'bio',
-		'name' => __( 'Bio', 'mppg-content' ),
+		'name' => __( 'Puppy Bio', 'mppg-content' ),
 		'options' => array(
 			'media_buttons' => false,
 			'teeny'         => true,

@@ -81,13 +81,12 @@
 
 .single-puppy {
 
-	#primary {
+	.puppy-main-bio {
+
 		img {
 			border-radius: 100%;
 		}
-	}
 
-	.puppy-main-bio {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		margin: 2em;

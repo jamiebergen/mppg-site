@@ -60,13 +60,13 @@ function register_member_fields() {
 	) );
 
 	// Email address (email field; used for future edits)
-	$member_data->add_field( array(
-		'default_cb' => __NAMESPACE__ . '\maybe_set_default_from_posted_values',
-		'type' => 'text_email',
-		'id'   => $prefix . 'email',
-		'name' => __( 'Member\'s email address', 'mppg-content' ),
-		'desc' => __( 'Used for authentication.', 'mppg-content' ),
-	) );
+//	$member_data->add_field( array(
+//		'default_cb' => __NAMESPACE__ . '\maybe_set_default_from_posted_values',
+//		'type' => 'text_email',
+//		'id'   => $prefix . 'email',
+//		'name' => __( 'Member\'s email address', 'mppg-content' ),
+//		'desc' => __( 'Used for authentication.', 'mppg-content' ),
+//	) );
 
 	// Member Bio (saved as post_content)
 	$member_data->add_field( array(

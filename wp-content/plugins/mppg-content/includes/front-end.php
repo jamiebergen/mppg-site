@@ -58,7 +58,7 @@ function do_frontend_form_submission_shortcode( $atts = array() ) {
 
 	// If the post was submitted successfully, notify the user.
 	if ( isset( $_GET['submission'] ) && 'success' === $_GET['submission'] ) {
-		return '<h3>' . __( 'Thank you for your submission! Check your email for a confirmation link.', 'mppg-content' ) . '</h3>';
+		return '<h3 class="submission-confirmation">' . __( 'Thank you! Your submission will be published after being reviewed by a human.', 'mppg-content' ) . '</h3>';
 	}
 
 	// Bail here if editing a post and the edit nonce is invalid.
