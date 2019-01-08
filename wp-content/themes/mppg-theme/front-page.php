@@ -19,7 +19,7 @@ get_header(); ?>
             <div id="home-top-text">
                 <h1 class="site-title"><?php echo $title; ?></h1>
                 <p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-                <a class="mppg-cta" href="<?php echo get_permalink( 167 ); ?>">Learn about our club <i class="fas fa-angle-double-right"></i></a>
+                <a class="mppg-cta" href="<?php echo get_permalink( 15 ); ?>">Learn about our club <i class="fas fa-angle-double-right"></i></a>
             </div>
         </div>
     </div>
