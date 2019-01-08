@@ -16,6 +16,10 @@
 	max-width: 1260px;
  	margin: 0 auto;
 	padding: 0 5%;
+
+	@media (min-width: 1023px) {
+		padding: 0 2em;
+	}
 }
 
 // Clearfix
