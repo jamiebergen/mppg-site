@@ -119,9 +119,9 @@ function register_puppy_fields() {
 		'id'      => $prefix . 'raisers',
 		'name'    => __( 'Raiser(s) *', 'mppg-content' ),
 		'desc'    => __( 'As you would like it to appear on the website. <br /> Include co-raisers.', 'mppg-content' ),
-		'attributes' => array(
-			'required' => 'required',
-		),
+//		'attributes' => array(
+//			'required' => 'required',
+//		),
 	) );
 
 	// Email address (email field; used for future edits)
