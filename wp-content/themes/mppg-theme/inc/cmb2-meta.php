@@ -68,7 +68,7 @@ function retrieve_puppy_data( $post_id ) {
 	// Get connected members
 	$connected_members = new WP_Query( array(
 		'connected_type' => 'members_to_puppies',
-		'connected_items' => get_queried_object(),
+		'connected_items' => get_post( $post_id ),
 		'nopaging' => true,
 		'orderby' => 'title',
 		'order' => 'ASC',
@@ -85,6 +85,26 @@ function retrieve_puppy_data( $post_id ) {
 		}
 	}
 	wp_reset_postdata();
+
+	if ( $puppy_fields['members'] || $puppy_fields['raisers'] ) {
+
+		$raiser_array = array();
+
+		if ( $puppy_fields['members'] ) {
+
+			foreach ( $puppy_fields['members'] as $member_id ) {
+
+				$member_link = '<a href="' . get_permalink( $member_id ) . '">' . get_the_title( $member_id ) . '</a>';
+				array_push( $raiser_array, $member_link );
+			}
+		}
+
+		if ( $puppy_fields['raisers'] ) {
+			array_push( $raiser_array, $puppy_fields['raisers'] );
+		}
+
+		$puppy_fields['raiser_array'] = $raiser_array;
+	}
 
 	return $puppy_fields;
 }

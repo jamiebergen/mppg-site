@@ -52,21 +52,8 @@ get_header();
 		                    }
 
                             // Display raiser(s) and/or connected member(s)
-                            if ( $puppy_data['members'] || $puppy_data['raisers'] ) {
-		                        $raiser_array = array();
-
-	                            if ( $puppy_data['members'] ) {
-
-		                            foreach ( $puppy_data['members'] as $member_id ) {
-
-			                            $member_link = '<a href="' . get_permalink( $member_id ) . '">' . get_the_title( $member_id ) . '</a>';
-			                            array_push( $raiser_array, $member_link );
-                                    }
-                                }
-
-                                if ( $puppy_data['raisers'] ) {
-	                                array_push( $raiser_array, $puppy_data['raisers'] );
-                                }
+                            if ( $puppy_data['raiser_array'] ) {
+	                            $raiser_array = $puppy_data['raiser_array'];
 
 	                            echo '<li><strong>Raiser(s): </strong>';
 

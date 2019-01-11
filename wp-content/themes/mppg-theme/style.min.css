@@ -249,6 +249,8 @@ p.minor-text.larger-text{font-size:17.6px;font-size:1.1rem}
 .puppy-text h2{margin-top:0}
 .newest-puppy{padding-top:1em !important;padding-bottom:1em !important}
 .newest-puppy img{border-radius:50%;margin:0 auto}
+.newest-puppy .minor-text a{color:#696969;margin-left:-2px;margin-right:-2px;padding-left:2px;padding-right:2px;-webkit-box-shadow:inset 0 -2px 0 #7c8f90;box-shadow:inset 0 -2px 0 #7c8f90;text-decoration:none;padding-bottom:2px}
+.newest-puppy .minor-text a:hover,.newest-puppy .minor-text a:focus,.newest-puppy .minor-text a:active{color:#404040;background-color:#f1f1ef}
 .error404 .page-content{margin-top:3em;margin-bottom:2em}
 .error404 .page-content p{font-size:17.6px;font-size:1.1rem}
 #page{overflow:hidden}

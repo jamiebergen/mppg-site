@@ -61,7 +61,6 @@ get_header(); ?>
 
     <div class="banner-row default-grid-container newest-puppy">
         <div class="puppy-text">
-            <h2>Meet our newest members.</h2>
 
             <?php
             // Retrieve info for a randomly selected current puppy
@@ -85,20 +84,32 @@ get_header(); ?>
                 $current_puppy_id = $puppy->ID;
             }
 
-            $puppy_data = retrieve_puppy_data( $current_puppy_id );
+            if ( isset( $current_puppy_id ) ) {
 
-            echo '<p class="minor-text larger-text">';
-                echo get_the_title( $current_puppy_id );
-                echo ' is a ';
-                echo strtolower( $puppy_data['gender'] );
-                echo ' ';
-                echo strtolower( $puppy_data['breed'] );
-                if ( $puppy_data['raisers'] ) {
-                    echo ' being raised by ';
-                    echo $puppy_data['raisers'];
-                }
-                echo '.';
-            echo '</p>';
+	            $puppy_data = retrieve_puppy_data( $current_puppy_id );
+
+	            echo '<h2>Meet ' . get_the_title( $current_puppy_id ) . '.</h2>';
+
+	            echo '<p class="minor-text larger-text">';
+	            echo get_the_title( $current_puppy_id );
+	            echo ' is a ';
+	            echo strtolower( $puppy_data['gender'] );
+	            echo ' ';
+	            echo strtolower( $puppy_data['breed'] );
+	            if ( $puppy_data['raiser_array'] ) {
+		            echo ' being raised by ';
+
+		            $raiser_array = $puppy_data['raiser_array'];
+
+		            $last  = array_slice( $raiser_array, -1 );
+		            $first = join( ', ', array_slice( $raiser_array, 0, -1 ) );
+		            $both  = array_filter( array_merge( array( $first ), $last ), 'strlen' );
+		            echo join( ' and ', $both );
+	            }
+	            echo '.';
+	            echo '</p>';
+
+            }
 
             echo '<a class="mppg-cta" href="' . get_term_link( 'current-puppy', 'status' ) . '">' . 'See all of our current puppies</a>';
 
