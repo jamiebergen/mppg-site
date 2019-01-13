@@ -161,7 +161,7 @@ add_filter( 'template_include', 'mppg_theme_template_redirect' );
 function mppg_theme_pre_get_posts_status( $query ) {
 	if ( ( $query->is_post_type_archive( 'puppy' ) || $query->is_tax( 'status' ) ) && ! is_admin() && $query->is_main_query() )  {
 		$query->set( 'meta_key', 'jmb_mppg_puppy_birthdate' );
-		$query->set( 'orderby', 'meta_value' );
+		$query->set( 'orderby', 'meta_value_num' );
 		$query->set( 'order', 'DESC' );
 	}
 }
