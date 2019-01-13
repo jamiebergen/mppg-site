@@ -172,6 +172,8 @@ function handle_frontend_new_post_form_submission() {
 		update_post_meta( $img_id, '_wp_attachment_image_alt', $post_data['post_title'] );
 	}
 
+	do_action( 'after_process_frontend_submission', $new_submission_id, $post_data, $sanitized_values, $cmb, $post_type );
+
 	/*
 	 * Redirect back to the form page with a query variable with the new post ID.
 	 * This will help double-submissions with browser refreshes
