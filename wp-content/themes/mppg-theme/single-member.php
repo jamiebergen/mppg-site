@@ -48,7 +48,7 @@ get_header();
 	                    if ( $member_data['puppies'] ) {
 
 	                        echo '<div class="member-puppies-container">';
-                                echo '<h2>Puppies Raised</h2>';
+                                echo '<h2>Puppies</h2>';
 
                                 echo '<ul class="member-puppies">';
 
