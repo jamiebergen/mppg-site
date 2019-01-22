@@ -15,6 +15,16 @@
 	input[type="submit"] {
 		border: none;
 	}
+
+	@media (max-width: 450px) {
+		.cmb-th {
+			padding: 0;
+		}
+
+		.cmb-td {
+			padding: 0 0 1.5em 0;
+		}
+	}
 }
 
 .submission-confirmation {

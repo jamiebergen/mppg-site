@@ -363,4 +363,6 @@ embed,iframe,object{max-width:100%}
 .comment-navigation .nav-links .nav-next:only-child,.posts-navigation .nav-links .nav-next:only-child,.post-navigation .nav-links .nav-next:only-child{grid-column-start:auto}
 .comment-respond input[type="text"],.comment-respond input[type="email"],.comment-respond input[type="url"]{width:100%}
 #masthead .site-branding{text-align:center}
+}@media(max-width:450px){.cmb-form .cmb-th{padding:0}
+.cmb-form .cmb-td{padding:0 0 1.5em 0}
 }
