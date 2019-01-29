@@ -223,6 +223,7 @@ article .entry-meta .edit-link,article .entry-footer .edit-link{display:block;ma
 .single-puppy .puppy-main-bio ul.puppy-stats li:last-of-type{border-bottom:0}
 .single-member .entry-content{margin-top:0}
 .single-member .member-main-bio{text-align:left;margin:2.5em 0 0 0;font-size:17.6px;font-size:1.1rem;display:grid;grid-template-columns:1fr 1fr;grid-gap:40px}
+.single-member .member-main-bio.no-puppies{display:block}
 .single-member .member-main-bio .member-left{text-align:center}
 .single-member .member-main-bio .member-left p{margin-top:.2em}
 .single-member .member-main-bio .member-left svg{border:5px solid #006738;max-width:300px;max-height:300px;border-radius:100%;padding:70px;width:100% !important;height:100%;margin-bottom:6px}

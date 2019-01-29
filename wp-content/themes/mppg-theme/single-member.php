@@ -21,15 +21,16 @@ get_header();
 
 			<?php
 			while ( have_posts() ) :
-				the_post(); ?>
+				the_post();
+
+				$member_data = retrieve_member_data( get_the_ID() );
+			?>
 
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-                    <div class="member-main-bio">
+                    <div class="member-main-bio <?php echo ( $member_data['puppies'] ? ' has-puppies' : ' no-puppies' ) ?>">
                         <div class="member-left">
 	                        <?php
-
-	                        $member_data = retrieve_member_data( get_the_ID() );
 
 	                        if ( get_the_post_thumbnail() ) {
 		                        the_post_thumbnail( 'member-single' );

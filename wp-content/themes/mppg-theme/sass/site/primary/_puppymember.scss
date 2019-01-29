@@ -150,6 +150,10 @@
 		grid-template-columns: 1fr 1fr;
 		grid-gap: 40px;
 
+		&.no-puppies {
+			display: block;
+		}
+
 		@media (max-width: 800px) {
 			display: block;
 			text-align: center;
