@@ -27,7 +27,7 @@ get_header(); ?>
     <div class="default-grid-container narrow row-container">
         <div class="line-under">
             <h2>Welcome to our club!</h2>
-            <p class="minor-text larger-text">Mid-Peninsula Puppy Guides is a local puppy raising club affiliated with Guide Dogs for the Blind, Inc. We are located on the San Francisco peninsula in California.</p>
+            <p class="minor-text larger-text">Guide Dogs for the Blind - Palo Alto, CA Puppy Raisers is a local puppy raising club affiliated with Guide Dogs for the Blind, Inc. We are located on the San Francisco peninsula in California.</p>
         </div>
     </div>
 

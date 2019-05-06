@@ -267,7 +267,7 @@ p.minor-text.larger-text{font-size:17.6px;font-size:1.1rem}
 #masthead .inner-container{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
 .site-branding{margin:1em 0}
 .site-branding .custom-logo-link{line-height:0}
-.site-branding .custom-logo-link img{width:130px}
+.site-branding .custom-logo-link img{width:250px}
 #colophon{margin-top:1em;color:#fff}
 #colophon .third-box{padding-bottom:15px}
 #colophon a{color:#696969;-webkit-box-shadow:inset 0 -2px 0 #696969;box-shadow:inset 0 -2px 0 #696969;text-decoration:none;padding-bottom:2px}
