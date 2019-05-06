@@ -50,7 +50,7 @@
         </div><!-- .site-info -->
         <div class="footer-credits">
             <div class="default-grid-container">
-                <p>&copy;<?php echo date('Y'); ?> Mid-Peninsula Puppy Guides. All rights reserved.</p>
+                <p>&copy;<?php echo date('Y'); ?> Guide Dogs for the Blind - Palo Alto, CA Puppy Raisers. All rights reserved.</p>
             </div>
         </div>
 
